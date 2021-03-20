@@ -1,0 +1,79 @@
+2021-03-19 12:54:23.337 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 22437 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-19 12:54:23.348 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-19 12:54:23.492 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-19 12:54:23.493 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-19 12:54:25.946 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8801 (http)
+2021-03-19 12:54:25.961 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8801"]
+2021-03-19 12:54:25.963 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-19 12:54:25.964 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-19 12:54:26.060 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-19 12:54:26.060 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 2565 ms
+2021-03-19 12:54:27.095 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-19 12:54:27.588 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-03-19 12:54:27.627 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8801"]
+2021-03-19 12:54:27.706 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8801 (http) with context path ''
+2021-03-19 12:54:27.735 INFO  com.lynn.wiki.WikiApplication                     :61   [32m                  [0;39m Started WikiApplication in 6.311 seconds (JVM running for 9.402)
+2021-03-19 12:54:27.741 INFO  com.lynn.wiki.WikiApplication                     :22   [32m                  [0;39m success
+2021-03-19 12:54:27.741 INFO  com.lynn.wiki.WikiApplication                     :23   [32m                  [0;39m address:	http://127.0.0.1:8801
+2021-03-19 12:55:56.228 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-19 12:55:56.232 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-03-19 12:55:56.235 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 3 ms
+2021-03-19 12:55:56.908 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
+2021-03-19 12:55:58.897 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
+2021-03-19 13:43:15.707 WARN  com.zaxxer.hikari.pool.HikariPool                 :787  [32m                  [0;39m HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m46s344ms).
+2021-03-19 14:10:59.926 WARN  com.zaxxer.hikari.pool.HikariPool                 :787  [32m                  [0;39m HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=27m14s159ms).
+2021-03-19 14:29:41.857 WARN  com.zaxxer.hikari.pool.HikariPool                 :787  [32m                  [0;39m HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m11s907ms).
+2021-03-19 14:46:30.283 WARN  com.zaxxer.hikari.pool.HikariPool                 :787  [32m                  [0;39m HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48s265ms).
+2021-03-19 17:00:57.783 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-19 17:00:57.795 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-1 - Shutdown initiated...
+2021-03-19 17:00:57.824 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-1 - Shutdown completed.
+2021-03-19 20:17:04.297 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 47181 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-19 20:17:04.303 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-19 20:17:04.492 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-19 20:17:04.493 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-19 20:17:06.849 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8801 (http)
+2021-03-19 20:17:06.878 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8801"]
+2021-03-19 20:17:06.879 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-19 20:17:06.880 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-19 20:17:07.043 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-19 20:17:07.043 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 2549 ms
+2021-03-19 20:17:08.712 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-19 20:17:09.852 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-03-19 20:17:09.921 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8801"]
+2021-03-19 20:17:10.145 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8801 (http) with context path ''
+2021-03-19 20:17:10.189 INFO  com.lynn.wiki.WikiApplication                     :61   [32m                  [0;39m Started WikiApplication in 7.096 seconds (JVM running for 9.538)
+2021-03-19 20:17:10.195 INFO  com.lynn.wiki.WikiApplication                     :22   [32m                  [0;39m success
+2021-03-19 20:17:10.197 INFO  com.lynn.wiki.WikiApplication                     :23   [32m                  [0;39m address:	http://127.0.0.1:8801
+2021-03-19 20:19:29.165 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-19 20:19:29.175 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-03-19 20:19:29.200 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 24 ms
+2021-03-19 20:19:30.090 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
+2021-03-19 20:19:33.031 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
+2021-03-19 20:43:05.819 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-19 20:43:05.831 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-1 - Shutdown initiated...
+2021-03-19 20:43:05.873 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-1 - Shutdown completed.
+2021-03-19 20:45:50.318 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 49319 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-19 20:45:50.331 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-19 20:45:50.477 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-19 20:45:50.478 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-19 20:45:52.760 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8801 (http)
+2021-03-19 20:45:52.772 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8801"]
+2021-03-19 20:45:52.773 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-19 20:45:52.774 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-19 20:45:52.859 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-19 20:45:52.860 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 2381 ms
+2021-03-19 20:45:53.933 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-19 20:45:54.452 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-03-19 20:45:54.486 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8801"]
+2021-03-19 20:45:54.549 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8801 (http) with context path ''
+2021-03-19 20:45:54.570 INFO  com.lynn.wiki.WikiApplication                     :61   [32m                  [0;39m Started WikiApplication in 5.161 seconds (JVM running for 6.953)
+2021-03-19 20:45:54.589 INFO  com.lynn.wiki.WikiApplication                     :22   [32m                  [0;39m success
+2021-03-19 20:45:54.589 INFO  com.lynn.wiki.WikiApplication                     :23   [32m                  [0;39m address:	http://127.0.0.1:8801
+2021-03-19 20:46:59.402 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-19 20:46:59.412 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-03-19 20:46:59.452 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 38 ms
+2021-03-19 20:46:59.979 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
+2021-03-19 20:47:01.655 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
+2021-03-19 20:55:54.901 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-19 20:55:54.905 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-1 - Shutdown initiated...
+2021-03-19 20:55:54.945 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-1 - Shutdown completed.

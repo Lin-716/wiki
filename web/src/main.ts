@@ -14,3 +14,7 @@ const icons: any = Icons;
 for (const i in icons) {
     app.component(i, icons[i]);
 }
+
+//test multi-environment
+console.log('environment:client', process.env.NODE_ENV)
+console.log('environment:server', process.env.VUE_APP_SERVER)

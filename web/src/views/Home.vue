@@ -112,7 +112,7 @@ export default defineComponent({
     onMounted(() => {
       console.log("mounted")
       //initial method 写进 mouted钩子里
-      axios.get("http://localhost:8801/ebook/list").then(
+      axios.get("http://localhost:8081/ebook/list").then(
           (response) => {
             const data = response.data
             ebooks.value = data.content
