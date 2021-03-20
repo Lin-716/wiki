@@ -110,9 +110,10 @@ export default defineComponent({
     //ref响应式数据
     const ebooks = ref();
     onMounted(() => {
-      console.log("mounted")
+      console.log("mounted22")
       //initial method 写进 mouted钩子里
-      axios.get("http://localhost:8081/ebook/list").then(
+      // 配置过了process.env.VUE_APP_SERVER为baseURL
+      axios.get("/ebook/list").then(
           (response) => {
             const data = response.data
             ebooks.value = data.content
