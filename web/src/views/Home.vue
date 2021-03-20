@@ -112,7 +112,7 @@ export default defineComponent({
     onMounted(() => {
       console.log("mounted")
       //initial method 写进 mouted钩子里
-      axios.get("http://localhost:8801/ebook/list?name=Oracle").then(
+      axios.get("http://localhost:8801/ebook/list").then(
           (response) => {
             const data = response.data
             ebooks.value = data.content
@@ -124,7 +124,8 @@ export default defineComponent({
       onChange: (page: number) => {
         console.log(page);
       },
-      pageSize: 3,
+      //nums of item each page
+      pageSize: 9,
     };
     const actions: Record<string, string>[] = [
       { type: 'StarOutlined', text: '156' },
