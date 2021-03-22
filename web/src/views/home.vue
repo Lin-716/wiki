@@ -113,11 +113,17 @@ export default defineComponent({
       console.log("mounted22")
       //initial method 写进 mouted钩子里
       // 配置过了process.env.VUE_APP_SERVER为baseURL
-      axios.get("/ebook/list").then(
+      axios.get("/ebook/list", {
+        params:{
+          page:1,
+          size:1000
+        }
+          }
+      ).then(
           (response) => {
             const data = response.data
-            ebooks.value = data.content
-            console.log(response)
+            ebooks.value = data.content.list
+            // console.log(response)
           })
     })
 
@@ -136,7 +142,7 @@ export default defineComponent({
 
     return {
       ebooks,
-      listData,
+      //listData,
       pagination,
       actions,
     }

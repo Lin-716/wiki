@@ -39,7 +39,7 @@ export default defineComponent({
     const ebooks = ref()
     const pagination = ref({
       current: 1,
-      pageSize: 2,
+      pageSize: 10,
       total:0
     })
     const loading = ref(false)
@@ -86,13 +86,20 @@ export default defineComponent({
     // 数据查询,只在方法内部调用不需要被return
     const handleQuery = (params:any) => {
       loading.value = true
-      axios.get("/ebook/list", params).then((response) => {
+      axios.get("/ebook/list",{
+        params: {
+          page: params.page,
+          size: params.size
+        }
+      }).then((response) => {
         loading.value = false
         const data = response.data
-        ebooks.value = data.content
+        ebooks.value = data.content.list
+        //测试demo content的list代表了数据
 
         //reset pagination button
         pagination.value.current = params.page;
+        pagination.value.total = data.content.page;
       })
     }
 
@@ -104,8 +111,12 @@ export default defineComponent({
       })
     }
 
+    //后端获得分页参数
     onMounted(() => {
-      handleQuery({})
+      handleQuery({
+        page: 1,
+        size: pagination.value.pageSize
+      })
     })
 
     return {
