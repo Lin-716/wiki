@@ -1,13 +1,12 @@
 package com.lynn.wiki.service;
 
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.lynn.wiki.domain.Ebook;
 import com.lynn.wiki.domain.EbookExample;
 import com.lynn.wiki.mapper.EbookMapper;
-import com.lynn.wiki.req.EbookReq;
-import com.lynn.wiki.req.PageReq;
+import com.lynn.wiki.req.EbookQueryReq;
+import com.lynn.wiki.req.EbookSaveReq;
 import com.lynn.wiki.resp.EbookResp;
 import com.lynn.wiki.resp.PageResp;
 import com.lynn.wiki.util.CopyUtil;
@@ -29,7 +28,7 @@ public class EbookService {
     @Autowired
     private EbookMapper ebookMapper;
 
-    public PageResp<EbookResp> list(EbookReq req){
+    public PageResp<EbookResp> list(EbookQueryReq req){
         PageHelper.startPage(1,3);
         EbookExample ebookExample = new EbookExample();
         EbookExample.Criteria criteria = ebookExample.createCriteria();
@@ -64,5 +63,17 @@ public class EbookService {
         pageResp.setList(list);
 
         return pageResp;
+    }
+
+    //保存
+    public void save(EbookSaveReq req){
+        Ebook ebook = CopyUtil.copy(req, Ebook.class);
+        if(ObjectUtils.isEmpty(req.getId())){
+            //新增
+            ebookMapper.insert(ebook);
+        }else{
+            //更新
+            ebookMapper.updateByPrimaryKey(ebook);
+        }
     }
 }

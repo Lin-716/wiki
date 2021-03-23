@@ -13,10 +13,11 @@
         <template #cover="{ text: cover }">
           <img v-if="cover" :src="cover" alt="avatar" />
         </template>
+<!--        record代表一整行的数据-->
         <template v-slot:action="{ text, record }">
 <!--          空格组件-->
           <a-space size="small">
-            <a-button type="primary">
+            <a-button type="primary" @click="edit(record)">
               编辑
             </a-button>
             <a-button type="danger">
@@ -27,11 +28,38 @@
       </a-table>
     </a-layout-content>
   </a-layout>
+
+<!--  表单-->
+  <a-modal
+      title="ebook form"
+      v-model:visible="modalVisible"
+      :confirm-loading="modalLoading"
+      @ok="handleModalOk"
+  >
+    <p><a-form :model="ebook" :label-col="{ span: 6 }">
+      <a-form-item label="封面">
+        <a-input v-model:value="ebook.cover" />
+      </a-form-item>
+      <a-form-item label="名称">
+        <a-input v-model:value="ebook.name" />
+      </a-form-item>
+      <a-form-item label="分类一">
+        <a-input v-model:value="ebook.category1Id" />
+      </a-form-item>
+      <a-form-item label="分类二">
+        <a-input v-model:value="ebook.category2Id" />
+      </a-form-item>
+      <a-form-item label="描述">
+        <a-input v-model:value="ebook.desc" />
+      </a-form-item>
+    </a-form></p>
+  </a-modal>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue';
 import axios from 'axios'
+//import { message } from 'ant-design-vue'
 
 export default defineComponent({
   name:'AdminEbook',
@@ -93,7 +121,7 @@ export default defineComponent({
         }
       }).then((response) => {
         loading.value = false
-        const data = response.data
+        const data = response.data //commomResp
         ebooks.value = data.content.list
         //测试demo content的list代表了数据
 
@@ -111,6 +139,34 @@ export default defineComponent({
       })
     }
 
+    //表单
+    const ebook = ref()
+    const modalVisible = ref(false)
+    const modalLoading = ref(false)
+
+    const handleModalOk = () => {
+      modalLoading.value = true
+      axios.post("/ebook/save",ebook.value).then((response) => {
+        const data = response.data
+        if (data.success){
+          modalLoading.value = false
+          modalVisible.value = false
+
+          //重新加载
+          handleQuery({
+            page: pagination.value.current,
+            size: pagination.value.pageSize
+          })
+        }
+      })
+    }
+
+    //编辑
+    const edit = (record: any) => {
+      modalVisible.value = true
+      ebook.value = record
+    }
+
     //后端获得分页参数
     onMounted(() => {
       handleQuery({
@@ -124,7 +180,14 @@ export default defineComponent({
       pagination,
       columns,
       loading,
-      handleTableChange
+      handleTableChange,
+
+      edit,
+      modalVisible,
+      modalLoading,
+      handleModalOk,
+
+      ebook
     };
   },
 });
