@@ -1,0 +1,42 @@
+package com.lynn.wiki.controller;
+
+import com.lynn.wiki.req.CategoryQueryReq;
+import com.lynn.wiki.req.CategorySaveReq;
+import com.lynn.wiki.resp.CommonResp;
+import com.lynn.wiki.resp.CategoryQueryResp;
+import com.lynn.wiki.resp.PageResp;
+import com.lynn.wiki.service.CategoryService;
+import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
+import javax.validation.Valid;
+
+@RestController
+@RequestMapping("/category")
+public class CategoryController {
+
+    @Resource
+    private CategoryService categoryService;
+
+    @GetMapping("/list")//接口的请求地址
+    public CommonResp list(@Valid CategoryQueryReq req){//@valid开启校验规则
+        CommonResp<PageResp<CategoryQueryResp>> resp = new CommonResp<>();
+        PageResp<CategoryQueryResp> list = categoryService.list(req);
+        resp.setContent(list);
+        return resp;
+    }
+
+    @PostMapping("/save")//保存编辑修改的电子书信息
+    public CommonResp save(@Valid @RequestBody CategorySaveReq req){
+        CommonResp resp = new CommonResp<>();
+        categoryService.save(req);
+        return resp;
+    }
+
+    @DeleteMapping("/delete/{id}")//保存编辑修改的电子书信息
+    public CommonResp delete(@PathVariable long id){
+        CommonResp resp = new CommonResp<>();
+        categoryService.delete(id);
+        return resp;
+    }
+}
