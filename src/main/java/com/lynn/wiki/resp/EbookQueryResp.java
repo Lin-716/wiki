@@ -1,7 +1,7 @@
 package com.lynn.wiki.resp;
 
 //去掉不返回给前端的参数，不与数据库表一一对应
-public class EbookResp {
+public class EbookQueryResp {
     private Long id;
 
     private String name;

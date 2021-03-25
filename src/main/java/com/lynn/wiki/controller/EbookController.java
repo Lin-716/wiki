@@ -3,7 +3,7 @@ package com.lynn.wiki.controller;
 import com.lynn.wiki.req.EbookSaveReq;
 import com.lynn.wiki.resp.CommonResp;
 import com.lynn.wiki.req.EbookQueryReq;
-import com.lynn.wiki.resp.EbookResp;
+import com.lynn.wiki.resp.EbookQueryResp;
 import com.lynn.wiki.resp.PageResp;
 import com.lynn.wiki.service.EbookService;
 import org.springframework.web.bind.annotation.*;
@@ -19,8 +19,8 @@ public class EbookController {
 
     @GetMapping("/list")//接口的请求地址
     public CommonResp list(EbookQueryReq req){
-        CommonResp<PageResp<EbookResp>> resp = new CommonResp<>();
-        PageResp<EbookResp> list = ebookService.list(req);
+        CommonResp<PageResp<EbookQueryResp>> resp = new CommonResp<>();
+        PageResp<EbookQueryResp> list = ebookService.list(req);
         resp.setContent(list);
         return resp;
     }

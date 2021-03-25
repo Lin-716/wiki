@@ -7,14 +7,16 @@ import com.lynn.wiki.domain.EbookExample;
 import com.lynn.wiki.mapper.EbookMapper;
 import com.lynn.wiki.req.EbookQueryReq;
 import com.lynn.wiki.req.EbookSaveReq;
-import com.lynn.wiki.resp.EbookResp;
+import com.lynn.wiki.resp.EbookQueryResp;
 import com.lynn.wiki.resp.PageResp;
 import com.lynn.wiki.util.CopyUtil;
+import com.lynn.wiki.util.SnowFlake;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -25,10 +27,12 @@ public class EbookService {
     private static final Logger LOG = LoggerFactory.getLogger(EbookService.class);
 
     @Resource
-    @Autowired
     private EbookMapper ebookMapper;
 
-    public PageResp<EbookResp> list(EbookQueryReq req){
+    @Resource
+    private SnowFlake snowFlake;
+
+    public PageResp<EbookQueryResp> list(EbookQueryReq req){
         PageHelper.startPage(1,3);
         EbookExample ebookExample = new EbookExample();
         EbookExample.Criteria criteria = ebookExample.createCriteria();
@@ -56,9 +60,9 @@ public class EbookService {
 //        }
 
         //列表复制
-        List<EbookResp> list = CopyUtil.copyList(ebookList, EbookResp.class);
+        List<EbookQueryResp> list = CopyUtil.copyList(ebookList, EbookQueryResp.class);
 
-        PageResp<EbookResp> pageResp = new PageResp<>();
+        PageResp<EbookQueryResp> pageResp = new PageResp<>();
         pageResp.setTotal(pageInfo.getTotal());
         pageResp.setList(list);
 
@@ -70,6 +74,7 @@ public class EbookService {
         Ebook ebook = CopyUtil.copy(req, Ebook.class);
         if(ObjectUtils.isEmpty(req.getId())){
             //新增
+            ebook.setId(snowFlake.nextId());
             ebookMapper.insert(ebook);
         }else{
             //更新
