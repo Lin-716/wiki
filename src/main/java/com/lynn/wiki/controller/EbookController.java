@@ -31,4 +31,11 @@ public class EbookController {
         ebookService.save(req);
         return resp;
     }
+
+    @DeleteMapping("/delete/{id}")//保存编辑修改的电子书信息
+    public CommonResp delete(@PathVariable long id){
+        CommonResp resp = new CommonResp<>();
+        ebookService.delete(id);
+        return resp;
+    }
 }
