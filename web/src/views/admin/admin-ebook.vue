@@ -4,9 +4,22 @@
         :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
     >
       <p>
-        <a-button type=primary @click="add()" size="large">
-          新增
-        </a-button>
+        <a-form layout="inline" :model="param">
+          <a-form-item>
+            <a-input v-model:value="param.name" placeholder="name">
+            </a-input>
+          </a-form-item>
+          <a-form-item>
+            <a-button type="primary" html-type="submit" @click="handleQuery({page:1,size:pagination.pageSize})">
+              查询
+            </a-button>
+          </a-form-item>
+          <a-form-item>
+            <a-button type=primary @click="add()">
+              新增
+            </a-button>
+          </a-form-item>
+        </a-form>
       </p>
       <a-table :columns="columns"
                :row-key="record => record.id"
@@ -77,6 +90,8 @@ import { message } from 'ant-design-vue'
 export default defineComponent({
   name:'AdminEbook',
   setup() {
+    const param= ref()
+    param.value = {}
     const ebooks = ref()
     const pagination = ref({
       current: 1,
@@ -130,7 +145,8 @@ export default defineComponent({
       axios.get("/ebook/list",{
         params: {
           page: params.page,
-          size: params.size
+          size: params.size,
+          name: param.value.name
         }
       }).then((response) => {
         loading.value = false
@@ -165,20 +181,17 @@ export default defineComponent({
     const handleModalOk = () => {
       modalLoading.value = true
       axios.post("/ebook/save",ebook.value).then((response) => {
+        modalLoading.value = false
         const data = response.data
         if (data.success){
-          modalLoading.value = false
-          if(data.success){
-            modalVisible.value = false
-          }else{
-            message.error(data.message)
-          }
-
+          modalVisible.value = false
           //重新加载
           handleQuery({
             page: pagination.value.current,
             size: pagination.value.pageSize
           })
+        }else{
+          message.error(data.message)
         }
       })
     }
@@ -227,7 +240,9 @@ export default defineComponent({
 
       edit,
       add,
+      param,
       handleDelete,
+      handleQuery,
 
       modalVisible,
       modalLoading,
