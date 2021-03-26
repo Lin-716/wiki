@@ -162,7 +162,6 @@ export default defineComponent({
         }else{
           message.error(data.message)
         }
-
       })
     }
 
@@ -237,10 +236,14 @@ export default defineComponent({
         const data = response.data //commomResp
         if(data.success){
           categorys= data.content
-          console.log('categorys',categorys)
           level1.value = []
           level1.value = Tool.array2Tree(categorys,0)//一级分类parent为0
-          console.log('level',level1.value)
+
+          //加载完分类后在加载电子书，保证数据加载完后再加载电子书
+          handleQuery({
+            // page: 1,
+            // size: pagination.value.pageSize
+          })
         }else{
           message.error(data.message)
         }
@@ -260,10 +263,7 @@ export default defineComponent({
     //后端获得分页参数
     onMounted(() => {
       handleQueryCategory()
-      handleQuery({
-        // page: 1,
-        // size: pagination.value.pageSize
-      })
+
     })
 
     return {
