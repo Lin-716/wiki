@@ -142,6 +142,7 @@ export default defineComponent({
     // 数据查询,只在方法内部调用不需要被return
     const handleQuery = (params:any) => {
       loading.value = true
+      ebook.value = []
       axios.get("/ebook/list",{
         params: {
           page: params.page,
