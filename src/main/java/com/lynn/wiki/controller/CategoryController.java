@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/category")
@@ -18,10 +19,10 @@ public class CategoryController {
     @Resource
     private CategoryService categoryService;
 
-    @GetMapping("/list")//接口的请求地址
-    public CommonResp list(@Valid CategoryQueryReq req){//@valid开启校验规则
-        CommonResp<PageResp<CategoryQueryResp>> resp = new CommonResp<>();
-        PageResp<CategoryQueryResp> list = categoryService.list(req);
+    @GetMapping("/all")//接口的请求地址
+    public CommonResp all(){//@valid开启校验规则
+        CommonResp<List<CategoryQueryResp>> resp = new CommonResp<>();
+        List<CategoryQueryResp> list = categoryService.all();
         resp.setContent(list);
         return resp;
     }

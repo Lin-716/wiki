@@ -6,11 +6,7 @@
       <p>
         <a-form layout="inline" :model="param">
           <a-form-item>
-            <a-input v-model:value="param.name" placeholder="name">
-            </a-input>
-          </a-form-item>
-          <a-form-item>
-            <a-button type="primary" html-type="submit" @click="handleQuery({page:1,size:pagination.pageSize})">
+            <a-button type="primary" html-type="submit" @click="handleQuery()">
               查询
             </a-button>
           </a-form-item>
@@ -23,10 +19,9 @@
       </p>
       <a-table :columns="columns"
                :row-key="record => record.id"
-               :data-source="categorys"
-               :pagination="pagination"
+               :data-source="level1"
                :loading="Loading"
-               @change="handleTableChange"
+               :pagination="false"
       >
         <template #cover="{ text: cover }">
           <img v-if="cover" :src="cover" alt="avatar" />
@@ -88,11 +83,7 @@ export default defineComponent({
     const param= ref()
     param.value = {}
     const categorys = ref()
-    const pagination = ref({
-      current: 1,
-      pageSize: 10,
-      total:0
-    })
+    const level1 = ref()
     const loading = ref(false)
 
     const columns = [
@@ -107,7 +98,7 @@ export default defineComponent({
       },
       {
         title: '顺序',
-        dataIndex: '顺序'
+        dataIndex: 'sort'
       },
       {
         title: 'Action',
@@ -115,38 +106,23 @@ export default defineComponent({
         slots: { customRender: 'action' }
       },]
     // 数据查询,只在方法内部调用不需要被return
-    const handleQuery = (params:any) => {
+    const handleQuery = () => {
       loading.value = true
-      axios.get("/category/list",{
-        params: {
-          page: params.page,
-          size: params.size,
-          name: param.value.name
-        }
-      }).then((response) => {
+      axios.get("/category/all").then((response) => {
         loading.value = false
         const data = response.data //commomResp
         if(data.success){
-          //测试demo content的list代表了数据
-          categorys.value = data.content.list
-
-          //reset pagination button
-          pagination.value.current = params.page
-          pagination.value.total = data.content.page
+          categorys.value = data.content
+          console.log('categorys',categorys)
+          level1.value = []
+          level1.value = Tool.array2Tree(categorys.value,0)//一级分类parent为0
+          console.log('level',level1.value)
         }else{
           message.error(data.message)
         }
-
       })
     }
 
-    //点击页码
-    const handleTableChange = (pagination: any) => {
-      handleQuery({
-        page: pagination.current,
-        size: pagination.pageSize
-      })
-    }
 
     //表单
     const category = ref()
@@ -161,10 +137,7 @@ export default defineComponent({
         if (data.success){
           modalVisible.value = false
           //重新加载
-          handleQuery({
-            page: pagination.value.current,
-            size: pagination.value.pageSize
-          })
+          handleQuery()
         }else{
           message.error(data.message)
         }
@@ -190,28 +163,20 @@ export default defineComponent({
         const data = response.data // commonResp
         if (data.success){
           //重新加载
-          handleQuery({
-            page: pagination.value.current,
-            size: pagination.value.pageSize
-          })
+          handleQuery()
         }
       })
     }
 
     //后端获得分页参数
     onMounted(() => {
-      handleQuery({
-        page: 1,
-        size: pagination.value.pageSize
-      })
+      handleQuery()
     })
 
     return {
       categorys,
-      pagination,
       columns,
       loading,
-      handleTableChange,
 
       edit,
       add,
@@ -223,7 +188,8 @@ export default defineComponent({
       modalLoading,
       handleModalOk,
 
-      category
+      category,
+      level1
     };
   },
 });

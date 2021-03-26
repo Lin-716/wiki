@@ -30,9 +30,20 @@ public class CategoryService {
     @Resource
     private SnowFlake snowFlake;
 
+    public List<CategoryQueryResp> all(){
+        CategoryExample categoryExample = new CategoryExample();
+        categoryExample.setOrderByClause("sort asc");
+        List<Category> categoryList = categoryMapper.selectByExample(categoryExample);
+
+        List<CategoryQueryResp> list = CopyUtil.copyList(categoryList, CategoryQueryResp.class);
+
+        return list;
+    }
+
     public PageResp<CategoryQueryResp> list(CategoryQueryReq req){
         PageHelper.startPage(1,3);
         CategoryExample categoryExample = new CategoryExample();
+        categoryExample.setOrderByClause("sort asc");
         CategoryExample.Criteria criteria = categoryExample.createCriteria();
 
         PageHelper.startPage(req.getPage(),req.getSize());//只会对第一个查询进行分页
@@ -40,20 +51,7 @@ public class CategoryService {
         PageInfo<Category> pageInfo = new PageInfo<>(categoryList);
         LOG.info("总行数{}",pageInfo.getTotal());
         LOG.info("总页数{}",pageInfo.getPages());
-//
-//        //复制整个列表-category中的实体在resp中循环再get出来
-//        List<CategoryResp> respList = new ArrayList<>();
-//        for ( Category category : categoryList){
-////            CategoryResp categoryResp = new CategoryResp();
-////            //categoryResp.setId(category.getId());用beanutils就不用一个个属性打
-////            BeanUtils.copyProperties(category, categoryResp);
-//             //对象复制
-//            CategoryResp copy = CopyUtil.copy(category, CategoryResp.class);
-//
-//            respList.add(categoryResp);
-//        }
 
-        //列表复制
         List<CategoryQueryResp> list = CopyUtil.copyList(categoryList, CategoryQueryResp.class);
 
         PageResp<CategoryQueryResp> pageResp = new PageResp<>();
