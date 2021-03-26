@@ -59,19 +59,7 @@ import axios from 'axios';
 import { message } from 'ant-design-vue'
 import { Tool } from '@/util/tool.ts'
 
-const listData: Record<string, string>[] = [];
-
-for (let i = 0; i < 23; i++) {
-  listData.push({
-    href: 'https://www.antdv.com/',
-    title: `ant design vue part ${i}`,
-    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-    description:
-        'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-    content:
-        'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-  });
-}
+var categoryId2 = 0
 
 export default defineComponent({
   name: 'Home',
@@ -84,23 +72,19 @@ export default defineComponent({
     console.log("set")
     //ref响应式数据
     const ebooks = ref();
-    onMounted(() => {
-      console.log("mounted22")
-      //initial method 写进 mouted钩子里
-      // 配置过了process.env.VUE_APP_SERVER为baseURL
-      axios.get("/ebook/list", {
+    const handleQueryEbook = () => {
+      axios.get("/ebook/list",{
         params:{
           page:1,
-          size:1000
+          size:1000,
+          categoryId2: categoryId2
         }
-          }
-      ).then(
-          (response) => {
-            const data = response.data
-            ebooks.value = data.content.list
-            // console.log(response)
-          })
-    })
+      }).then((response) => {
+        const data = response.data
+        ebooks.value = data.content.list
+      })
+      console.log(ebooks.value)
+    }
 
     const pagination = {
       onChange: (page: number) => {
@@ -134,19 +118,22 @@ export default defineComponent({
     }
 
     const isShowWelcome = ref(true)
-
     const handleClick = (value:any) => {
       //console.log(value)
       if(value.key === "welcome"){
         isShowWelcome.value = true
       }else{
+        categoryId2 = value.key
         isShowWelcome.value = false
+        handleQueryEbook()
       }
     }
 
     onMounted(()=>{
       handleQueryCategory()
+      //handleQueryEbook()
     })
+
     return {
       ebooks,
       //listData,
