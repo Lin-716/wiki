@@ -38,6 +38,9 @@
         <template v-slot:action="{ text, record }">
 <!--          空格组件-->
           <a-space size="small">
+            <a-button type="primary">
+              文档管理
+            </a-button>
             <a-button type="primary" @click="edit(record)">
               编辑
             </a-button>
