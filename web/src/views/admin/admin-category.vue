@@ -62,7 +62,13 @@
          <a-input v-model:value="category.name" />
        </a-form-item>
        <a-form-item label="父分类">
-         <a-input v-model:value="category.parent" />
+         <a-select
+             v-model:value="category.parent"
+             ref="select"
+         >
+           <a-select-option value="0">无</a-select-option>
+           <a-select-option v-for="c in level1" :key="c.id" :value="c.id" :disabled="category.id == c.id">{{ c.name }}</a-select-option>
+         </a-select>
        </a-form-item>
        <a-form-item label="顺序">
          <a-input v-model:value="category.sort" />
@@ -108,6 +114,7 @@ export default defineComponent({
     // 数据查询,只在方法内部调用不需要被return
     const handleQuery = () => {
       loading.value = true
+      level1.value = []
       axios.get("/category/all").then((response) => {
         loading.value = false
         const data = response.data //commomResp
