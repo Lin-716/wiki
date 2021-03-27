@@ -727,3 +727,71 @@ Identify and stop the process that's listening on port 8081 or configure this ap
 2021-03-27 13:10:19.624 DEBUG com.lynn.wiki.mapper.DocMapper.selectByExample    :137  [32m                  [0;39m <==      Total: 6
 2021-03-27 13:10:19.630 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"ebookId":1,"id":1,"name":"文档1","parent":0,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":2,"name":"文档1.1","parent":1,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":4,"name":"文档2.1","parent":3,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":6,"name":"文档2.2.1","parent":5,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":3,"name":"文档2","parent":0,"sort":2,"viewCount":0,"voteCount":0},{"ebookId":1,"id":5,"name":"文档2.2","parent":3,"sort":2,"viewCount":0,"voteCount":0}],"success":true}
 2021-03-27 13:10:19.631 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：26 ms -------------
+2021-03-27 13:24:51.452 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-27 13:24:51.463 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-1 - Shutdown initiated...
+2021-03-27 13:24:51.507 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-1 - Shutdown completed.
+2021-03-27 13:51:04.726 INFO  org.hibernate.validator.internal.util.Version     :21   [32m                  [0;39m HV000001: Hibernate Validator 6.1.7.Final
+2021-03-27 13:51:04.760 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 78153 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-27 13:51:04.781 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-27 13:51:05.018 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-27 13:51:05.018 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-27 13:51:07.569 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8081 (http)
+2021-03-27 13:51:07.582 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-27 13:51:07.583 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-27 13:51:07.584 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-27 13:51:07.679 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-27 13:51:07.679 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 2658 ms
+2021-03-27 13:51:08.846 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-27 13:51:09.662 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-03-27 13:51:09.694 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8081"]
+2021-03-27 13:51:09.814 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-27 13:51:09.897 INFO  com.lynn.wiki.WikiApplication                     :61   [32m                  [0;39m Started WikiApplication in 6.302 seconds (JVM running for 8.498)
+2021-03-27 13:51:09.906 INFO  com.lynn.wiki.WikiApplication                     :22   [32m                  [0;39m success
+2021-03-27 13:51:09.907 INFO  com.lynn.wiki.WikiApplication                     :23   [32m                  [0;39m address:	http://127.0.0.1:8081
+2021-03-27 13:52:24.849 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-27 13:52:24.853 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-03-27 13:52:24.862 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 9 ms
+2021-03-27 13:52:25.140 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-27 13:52:25.146 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/doc/all GET
+2021-03-27 13:52:25.147 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.DocController.all
+2021-03-27 13:52:25.147 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-27 13:52:25.395 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: []
+2021-03-27 13:52:25.662 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
+2021-03-27 13:52:26.794 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
+2021-03-27 13:52:26.812 DEBUG com.lynn.wiki.mapper.DocMapper.selectByExample    :137  [32m                  [0;39m ==>  Preparing: select id, ebook_id, parent, `name`, sort, view_count, vote_count from doc order by sort asc
+2021-03-27 13:52:26.864 DEBUG com.lynn.wiki.mapper.DocMapper.selectByExample    :137  [32m                  [0;39m ==> Parameters: 
+2021-03-27 13:52:26.923 TRACE com.lynn.wiki.mapper.DocMapper.selectByExample    :143  [32m                  [0;39m <==    Columns: id, ebook_id, parent, name, sort, view_count, vote_count
+2021-03-27 13:52:26.925 TRACE com.lynn.wiki.mapper.DocMapper.selectByExample    :143  [32m                  [0;39m <==        Row: 1, 1, 0, 文档1, 1, 0, 0
+2021-03-27 13:52:26.931 TRACE com.lynn.wiki.mapper.DocMapper.selectByExample    :143  [32m                  [0;39m <==        Row: 2, 1, 1, 文档1.1, 1, 0, 0
+2021-03-27 13:52:26.932 TRACE com.lynn.wiki.mapper.DocMapper.selectByExample    :143  [32m                  [0;39m <==        Row: 4, 1, 3, 文档2.1, 1, 0, 0
+2021-03-27 13:52:26.933 TRACE com.lynn.wiki.mapper.DocMapper.selectByExample    :143  [32m                  [0;39m <==        Row: 6, 1, 5, 文档2.2.1, 1, 0, 0
+2021-03-27 13:52:26.935 TRACE com.lynn.wiki.mapper.DocMapper.selectByExample    :143  [32m                  [0;39m <==        Row: 3, 1, 0, 文档2, 2, 0, 0
+2021-03-27 13:52:26.937 TRACE com.lynn.wiki.mapper.DocMapper.selectByExample    :143  [32m                  [0;39m <==        Row: 5, 1, 3, 文档2.2, 2, 0, 0
+2021-03-27 13:52:26.940 DEBUG com.lynn.wiki.mapper.DocMapper.selectByExample    :137  [32m                  [0;39m <==      Total: 6
+2021-03-27 13:52:27.052 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"ebookId":1,"id":1,"name":"文档1","parent":0,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":2,"name":"文档1.1","parent":1,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":4,"name":"文档2.1","parent":3,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":6,"name":"文档2.2.1","parent":5,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":3,"name":"文档2","parent":0,"sort":2,"viewCount":0,"voteCount":0},{"ebookId":1,"id":5,"name":"文档2.2","parent":3,"sort":2,"viewCount":0,"voteCount":0}],"success":true}
+2021-03-27 13:52:27.053 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：1915 ms -------------
+2021-03-27 13:52:30.516 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-27 13:52:30.516 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/doc/delete/1,2 DELETE
+2021-03-27 13:52:30.517 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.DocController.delete
+2021-03-27 13:52:30.517 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-27 13:52:30.518 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: ["1,2"]
+2021-03-27 13:52:30.547 DEBUG com.lynn.wiki.mapper.DocMapper.deleteByExample    :137  [32m                  [0;39m ==>  Preparing: delete from doc WHERE ( id in ( ? , ? ) )
+2021-03-27 13:52:30.548 DEBUG com.lynn.wiki.mapper.DocMapper.deleteByExample    :137  [32m                  [0;39m ==> Parameters: 1(String), 2(String)
+2021-03-27 13:52:30.630 DEBUG com.lynn.wiki.mapper.DocMapper.deleteByExample    :137  [32m                  [0;39m <==    Updates: 2
+2021-03-27 13:52:30.631 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"success":true}
+2021-03-27 13:52:30.632 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：116 ms -------------
+2021-03-27 13:52:30.667 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-27 13:52:30.667 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/doc/all GET
+2021-03-27 13:52:30.667 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.DocController.all
+2021-03-27 13:52:30.668 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-27 13:52:30.668 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: []
+2021-03-27 13:52:30.669 DEBUG com.lynn.wiki.mapper.DocMapper.selectByExample    :137  [32m                  [0;39m ==>  Preparing: select id, ebook_id, parent, `name`, sort, view_count, vote_count from doc order by sort asc
+2021-03-27 13:52:30.670 DEBUG com.lynn.wiki.mapper.DocMapper.selectByExample    :137  [32m                  [0;39m ==> Parameters: 
+2021-03-27 13:52:30.672 TRACE com.lynn.wiki.mapper.DocMapper.selectByExample    :143  [32m                  [0;39m <==    Columns: id, ebook_id, parent, name, sort, view_count, vote_count
+2021-03-27 13:52:30.674 TRACE com.lynn.wiki.mapper.DocMapper.selectByExample    :143  [32m                  [0;39m <==        Row: 4, 1, 3, 文档2.1, 1, 0, 0
+2021-03-27 13:52:30.675 TRACE com.lynn.wiki.mapper.DocMapper.selectByExample    :143  [32m                  [0;39m <==        Row: 6, 1, 5, 文档2.2.1, 1, 0, 0
+2021-03-27 13:52:30.677 TRACE com.lynn.wiki.mapper.DocMapper.selectByExample    :143  [32m                  [0;39m <==        Row: 3, 1, 0, 文档2, 2, 0, 0
+2021-03-27 13:52:30.678 TRACE com.lynn.wiki.mapper.DocMapper.selectByExample    :143  [32m                  [0;39m <==        Row: 5, 1, 3, 文档2.2, 2, 0, 0
+2021-03-27 13:52:30.678 DEBUG com.lynn.wiki.mapper.DocMapper.selectByExample    :137  [32m                  [0;39m <==      Total: 4
+2021-03-27 13:52:30.680 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"ebookId":1,"id":4,"name":"文档2.1","parent":3,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":6,"name":"文档2.2.1","parent":5,"sort":1,"viewCount":0,"voteCount":0},{"ebookId":1,"id":3,"name":"文档2","parent":0,"sort":2,"viewCount":0,"voteCount":0},{"ebookId":1,"id":5,"name":"文档2.2","parent":3,"sort":2,"viewCount":0,"voteCount":0}],"success":true}
+2021-03-27 13:52:30.680 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：14 ms -------------

@@ -212,10 +212,39 @@ export default defineComponent({
       treeSelectData.value.unshift({id: 0, name: '无'});//unshift往数组前面添加一个元素
     }
 
+    /**
+     * 删除某节点及其子孙节点
+     */
+    const ids:Array<string> = []
+    const getDeleteIds = (treeSelectData: any, id: any) => {
+      // console.log(treeSelectData, id);
+      // 遍历数组，即遍历某一层节点
+      for (let i = 0; i < treeSelectData.length; i++) {
+        const node = treeSelectData[i];
+        if (node.id === id) {
+          ids.push(id)
+          // 遍历所有子节点，将所有子节点都加入ids
+          const children = node.children;
+          if (Tool.isNotEmpty(children)) {
+            for (let j = 0; j < children.length; j++) {
+              getDeleteIds(children, children[j].id)
+            }
+          }
+        } else {
+          // 如果当前节点不是目标节点，则到其子节点再找找看。
+          const children = node.children;
+          if (Tool.isNotEmpty(children)) {
+            getDeleteIds(children, id);
+          }
+        }
+      }
+    };
+
     //删除
     const handleDelete = (id: number) => {
+      getDeleteIds(level1.value, id)
       modalLoading.value = true
-      axios.delete("/doc/delete/" + id,doc.value).then((response) => {
+      axios.delete("/doc/delete/" + ids.join(",")).then((response) => {
         const data = response.data // commonResp
         if (data.success){
           //重新加载
