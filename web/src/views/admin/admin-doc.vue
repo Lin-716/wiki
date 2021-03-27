@@ -85,10 +85,12 @@ import { defineComponent, onMounted, ref } from 'vue';
 import axios from 'axios'
 import { message } from 'ant-design-vue'
 import { Tool } from '@/util/tool'
+import { useRoute } from "vue-router";
 
 export default defineComponent({
   name:'AdminDoc',
   setup() {
+    const route = useRoute()
     const param= ref()
     param.value = {}
     const docs = ref()
@@ -223,8 +225,12 @@ export default defineComponent({
     }
 
     //后端获得分页参数
+    //ebookId为admin-category中拼接的record.id（'/admin/doc/ebookid=?' + record.id
     onMounted(() => {
       handleQuery()
+      doc.value = {
+        ebookId: route.query.ebookId
+      }
     })
 
     return {
