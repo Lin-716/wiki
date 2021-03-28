@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 public class DocSaveReq {
     private Long id;
 
-    @NotNull(message = "电子书不能为空")
+//    @NotNull(message = "电子书不能为空")
     private Long ebookId;
 
     @NotNull(message = "父文档不能为空")
@@ -14,8 +14,11 @@ public class DocSaveReq {
     @NotNull(message = "名称不能为空")
     private String name;
 
-    @NotNull(message = "排序不能为空")
+    @NotNull(message = "顺序不能为空")
     private Integer sort;
+
+    @NotNull(message = "内容不能为空")
+    private String content;
 
     private Integer viewCount;
 
@@ -61,6 +64,10 @@ public class DocSaveReq {
         this.sort = sort;
     }
 
+    public String getContent() { return content; }
+
+    public void setContent(String content) { this.content = content; }
+
     public Integer getViewCount() {
         return viewCount;
     }
@@ -79,18 +86,15 @@ public class DocSaveReq {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", ebookId=").append(ebookId);
-        sb.append(", parent=").append(parent);
-        sb.append(", name=").append(name);
-        sb.append(", sort=").append(sort);
-        sb.append(", viewCount=").append(viewCount);
-        sb.append(", voteCount=").append(voteCount);
-        sb.append("]");
-        return sb.toString();
+        return "DocSaveReq{" +
+                "id=" + id +
+                ", ebookId=" + ebookId +
+                ", parent=" + parent +
+                ", name='" + name + '\'' +
+                ", sort=" + sort +
+                ", content='" + content + '\'' +
+                ", viewCount=" + viewCount +
+                ", voteCount=" + voteCount +
+                '}';
     }
 }

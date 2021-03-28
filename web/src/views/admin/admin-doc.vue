@@ -114,6 +114,13 @@ export default defineComponent({
   name:'AdminDoc',
   setup() {
     const route = useRoute()
+    console.log("路由：", route);
+    console.log("route.path：", route.path);
+    console.log("route.query：", route.query);
+    console.log("route.param：", route.params);
+    console.log("route.fullPath：", route.fullPath);
+    console.log("route.name：", route.name);
+    console.log("route.meta：", route.meta);
     const param= ref()
     param.value = {}
     const docs = ref()
@@ -165,6 +172,8 @@ export default defineComponent({
 
     const handleSave = () => {
       modalLoading.value = true
+      doc.value.content = editor.txt.html();//获取富文本的内容
+      console.log("content",doc.value)
       axios.post("/doc/save",doc.value).then((response) => {
         modalLoading.value = false
         const data = response.data
@@ -172,6 +181,7 @@ export default defineComponent({
           modalVisible.value = false
           //重新加载
           handleQuery()
+          message.success("保存成功")
         }else{
           message.error(data.message)
         }
@@ -224,13 +234,14 @@ export default defineComponent({
 
     //新增
     const add = () => {
+      editor.txt.html("");
       modalVisible.value = true
-      doc.value = {}
+      console.log(route.query.ebookId)
       doc.value = {
         ebookId: route.query.ebookId
       }
 
-      treeSelectData.value = Tool.copy(level1.value)
+      treeSelectData.value = Tool.copy(level1.value) || []
 
       treeSelectData.value.unshift({id: 0, name: '无'});//unshift往数组前面添加一个元素
     }
