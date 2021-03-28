@@ -76,16 +76,21 @@
        <a-form-item label="顺序">
          <a-input v-model:value="doc.sort" />
        </a-form-item>
+       <a-form-item label="内容">
+         <div id="content"></div>
+       </a-form-item>
     </a-form>
   </a-modal>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
+import { defineComponent, onMounted, ref, createVNode } from 'vue'
 import axios from 'axios'
-import { message } from 'ant-design-vue'
+import { message,Modal } from 'ant-design-vue'
 import { Tool } from '@/util/tool'
-import { useRoute } from "vue-router";
+import { useRoute } from "vue-router"
+import ExclamationCircleOutlined from "@ant-design/icons-vue/ExclamationCircleOutlined"
+import E from 'wangeditor'
 
 export default defineComponent({
   name:'AdminDoc',
@@ -142,6 +147,8 @@ export default defineComponent({
     const modalLoading = ref(false)
     const treeSelectData = ref()//level1要显示在表格，所以用treeSelectData来显示父文档节点，可以添加无
     treeSelectData.value = []
+    const editor = new E('#content')//wangeditor
+
 
     const handleModalOk = () => {
       modalLoading.value = true
@@ -200,18 +207,28 @@ export default defineComponent({
 
       // 为选择树添加一个"无"
       treeSelectData.value.unshift({id: 0, name: '无'});//unshift往数组前面添加一个元素
+      setTimeout(function() {
+        editor.create()//页面渲染完，model出现了再去create
+      },100)
     }
 
     //新增
     const add = () => {
       modalVisible.value = true
       doc.value = {}
+      doc.value = {
+        ebookId: route.query.ebookId
+      }
 
       treeSelectData.value = Tool.copy(level1.value)
 
       treeSelectData.value.unshift({id: 0, name: '无'});//unshift往数组前面添加一个元素
+      setTimeout(function() {
+        editor.create()//页面渲染完，model出现了再去create
+      },100)
     }
 
+    const deleteNames: Array<string> = [];
     /**
      * 删除某节点及其子孙节点
      */
@@ -222,6 +239,7 @@ export default defineComponent({
       for (let i = 0; i < treeSelectData.length; i++) {
         const node = treeSelectData[i];
         if (node.id === id) {
+          deleteNames.push(node.name);
           ids.push(id)
           // 遍历所有子节点，将所有子节点都加入ids
           const children = node.children;
@@ -242,24 +260,35 @@ export default defineComponent({
 
     //删除
     const handleDelete = (id: number) => {
+      deleteNames.length = 0;
       getDeleteIds(level1.value, id)
       modalLoading.value = true
-      axios.delete("/doc/delete/" + ids.join(",")).then((response) => {
-        const data = response.data // commonResp
-        if (data.success){
-          //重新加载
-          handleQuery()
-        }
-      })
+      console.log(deleteNames,ids)
+      Modal.confirm({
+        title: '确认删除',
+        content: "将删除：【" + deleteNames.join("，") + "】删除后不可恢复，确认删除？",
+        icon: createVNode(ExclamationCircleOutlined),
+        onOk() {
+          axios.delete("/doc/delete/" + ids.join(",")).then((response) => {
+            const data = response.data // commonResp
+            if (data.success){
+              //重新加载
+              handleQuery()
+            }
+          })
+        },
+        onCancel() {
+          console.log('Cancel');
+        },
+      });
+
     }
 
     //后端获得分页参数
     //ebookId为admin-category中拼接的record.id（'/admin/doc/ebookid=?' + record.id
     onMounted(() => {
       handleQuery()
-      doc.value = {
-        ebookId: route.query.ebookId
-      }
+
     })
 
     return {
