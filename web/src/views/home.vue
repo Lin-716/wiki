@@ -41,7 +41,9 @@
 
             <a-list-item-meta :description="item.description">
               <template #title>
-                <a :href="item.href">{{ item.name }}</a>
+                <router-link :to="'/doc?ebookId=' + item.id">
+                  {{ item.name }}
+                </router-link>
               </template>
               <template #avatar><a-avatar :src="item.cover" /></template>
             </a-list-item-meta>
@@ -59,7 +61,7 @@ import axios from 'axios';
 import { message } from 'ant-design-vue'
 import { Tool } from '@/util/tool.ts'
 
-var categoryId2 = 0
+
 
 export default defineComponent({
   name: 'Home',
@@ -69,6 +71,7 @@ export default defineComponent({
   //   // MessageOutlined
   // },
   setup(){
+    let categoryId2 = 0
     console.log("set")
     //ref响应式数据
     const ebooks = ref();

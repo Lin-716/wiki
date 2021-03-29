@@ -114,13 +114,6 @@ export default defineComponent({
   name:'AdminDoc',
   setup() {
     const route = useRoute()
-    console.log("路由：", route);
-    console.log("route.path：", route.path);
-    console.log("route.query：", route.query);
-    console.log("route.param：", route.params);
-    console.log("route.fullPath：", route.fullPath);
-    console.log("route.name：", route.name);
-    console.log("route.meta：", route.meta);
     const param= ref()
     param.value = {}
     const docs = ref()
@@ -138,11 +131,12 @@ export default defineComponent({
         key: 'action',
         slots: { customRender: 'action' }
       }]
-    // 数据查询,只在方法内部调用不需要被return
+
+    // 数据查询
     const handleQuery = () => {
       loading.value = true
       level1.value = []
-      axios.get("/doc/all").then((response) => {
+      axios.get("/doc/all" + route.query.ebookId).then((response) => {
         loading.value = false
         const data = response.data //commomResp
         if(data.success){
@@ -156,7 +150,6 @@ export default defineComponent({
         }
       })
     }
-
 
     //表单
     const doc = ref()
@@ -219,10 +212,26 @@ export default defineComponent({
       }
     };
 
+
+    // 内容查询
+    const handleQueryContent = () => {
+      axios.get("/doc/find-content/" + doc.value.id).then((response) => {
+        const data = response.data //commomResp
+        if(data.success){
+          editor.txt.html(data.content)
+        }else{
+          message.error(data.message)
+        }
+      })
+    }
+
+
     //编辑
     const edit = (record: any) => {
+      editor.txt.html("");
       modalVisible.value = true
       doc.value = Tool.copy(record)//复制值显示到表单中，修改表单值未确定时，不会修改到值
+      handleQueryContent()
 
       // 不能选择当前节点及其所有子孙节点，作为父节点，会使树断开
       treeSelectData.value = Tool.copy(level1.value);
@@ -299,8 +308,8 @@ export default defineComponent({
           console.log('Cancel');
         },
       });
-
     }
+
 
     //后端获得分页参数
     //ebookId为admin-category中拼接的record.id（'/admin/doc/ebookid=?' + record.id

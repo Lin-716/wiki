@@ -27,6 +27,14 @@ public class CategoryController {
         return resp;
     }
 
+    @GetMapping("/list")
+    public CommonResp list(@Valid CategoryQueryReq req) {
+        CommonResp<PageResp<CategoryQueryResp>> resp = new CommonResp<>();
+        PageResp<CategoryQueryResp> list = categoryService.list(req);
+        resp.setContent(list);
+        return resp;
+    }
+
     @PostMapping("/save")//保存编辑修改的电子书信息
     public CommonResp save(@Valid @RequestBody CategorySaveReq req){
         CommonResp resp = new CommonResp<>();
