@@ -1,6 +1,7 @@
 <template>
   <a-layout>
     <a-layout-content :style="{background:'#fff', padding:'24px', margin:0, minHeight:'200px'}">
+      <h3 v-if="level1.length === 0">找不到相关文档</h3>
       <a-row>
         <a-col :span="6">
           <a-tree
@@ -8,7 +9,7 @@
             :tree-data="level1"
             @select="onSelect"
             :replaceFields="{title:'name', key:'id', value:'id'}"
-            :defaultExpandAll="true"
+            :defaultExpandAll="defaultSelectedKeys"
           >
           </a-tree>
         </a-col>
@@ -35,6 +36,20 @@ export default defineComponent({
     const level1 = ref()
     level1.value = []
     const html = ref()
+    const defaultSelectedKeys = ref()//默认选择的变量，是个数组
+    defaultSelectedKeys.value = []
+
+    // 内容查询
+    const handleQueryContent = (id: number) => {
+      axios.get("/doc/find-content/" + id).then((response) => {
+        const data = response.data //commomResp
+        if(data.success){
+          html.value = data.content
+        }else{
+          message.error(data.message)
+        }
+      })
+    }
 
     // 数据查询
     const handleQuery = () => {
@@ -45,18 +60,11 @@ export default defineComponent({
 
           level1.value = []
           level1.value = Tool.array2Tree(docs.value,0)//一级文档parent为0
-        }else{
-          message.error(data.message)
-        }
-      })
-    }
 
-    // 内容查询
-    const handleQueryContent = (id: number) => {
-      axios.get("/doc/find-content/" + id).then((response) => {
-        const data = response.data //commomResp
-        if(data.success){
-          html.value = data.content
+          if(Tool.isNotEmpty(level1)){
+            defaultSelectedKeys.value = [level1.value[0].id]
+            handleQueryContent(level1.value[0].id)
+          }
         }else{
           message.error(data.message)
         }
@@ -79,12 +87,13 @@ export default defineComponent({
     return {
       level1,
       html,
-      onSelect
+      onSelect,
+      defaultSelectedKeys
     };
   },
 });
 </script>
-<style scoped>
+<style>
 /* wangeditor默认样式, 参照: http://www.wangeditor.com/doc/pages/02-%E5%86%85%E5%AE%B9%E5%A4%84%E7%90%86/03-%E8%8E%B7%E5%8F%96html.html */
 /* table 样式 */
 .wangeditor table {

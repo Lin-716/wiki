@@ -82,23 +82,24 @@
               <a-input v-model:value="doc.sort" placeholder="顺序"/>
             </a-form-item>
             <a-form-item>
+              <a-button type="primary" @click="handlePreviewContent()">
+                <EyeOutline/>内容预览
+              </a-button>
+            </a-form-item>
+            <a-form-item>
               <div id="content"></div>
             </a-form-item>
           </a-form>
         </a-col>
       </a-row>
 
+      <a-drawer width="900" placement="right" :closable="false" :visible="drawerVisible" @close="onDrawerClose">
+        <div class="wangeditor" :innerHTML="previewHtml"></div>
+      </a-drawer>
+
     </a-layout-content>
   </a-layout>
 
-<!--  表单-->
-<!--  <a-modal-->
-<!--      title="doc form"-->
-<!--      v-model:visible="modalVisible"-->
-<!--      :confirm-loading="modalLoading"-->
-<!--      @ok="handleModalOk"-->
-<!--  >-->
-<!--     </a-modal>-->
 </template>
 
 <script lang="ts">
@@ -313,6 +314,17 @@ export default defineComponent({
       });
     }
 
+    //富文本的预览
+    const drawerVisible = ref(false)
+    const previewHtml = ref()
+    const handlePreviewContent = () => {
+      const html = editor.txt.html()
+      previewHtml.value = html
+      drawerVisible.value = true
+    }
+    const onDrawerClose = () => {
+      drawerVisible.value = false
+    }
 
     //后端获得分页参数
     //ebookId为admin-category中拼接的record.id（'/admin/doc/ebookid=?' + record.id
@@ -339,7 +351,12 @@ export default defineComponent({
 
       doc,
       level1,
-      treeSelectData
+      treeSelectData,
+
+      drawerVisible,
+      previewHtml,
+      handlePreviewContent,
+      onDrawerClose
     };
   },
 });
