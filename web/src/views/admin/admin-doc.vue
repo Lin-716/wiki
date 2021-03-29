@@ -119,6 +119,8 @@ export default defineComponent({
     const docs = ref()
     const level1 = ref()
     const loading = ref(false)
+    const treeSelectData = ref()//level1要显示在表格，所以用treeSelectData来显示父文档节点，可以添加无
+    treeSelectData.value = []
 
     const columns = [
       {
@@ -136,15 +138,18 @@ export default defineComponent({
     const handleQuery = () => {
       loading.value = true
       level1.value = []
-      axios.get("/doc/all" + route.query.ebookId).then((response) => {
+      axios.get("/doc/all/" + route.query.ebookId).then((response) => {
         loading.value = false
         const data = response.data //commomResp
         if(data.success){
           docs.value = data.content
-          console.log('docs',docs)
           level1.value = []
           level1.value = Tool.array2Tree(docs.value,0)//一级文档parent为0
-          console.log('level',level1.value)
+
+          //给父文档选择框赋值
+          treeSelectData.value = Tool.copy(level1.value)
+          treeSelectData.value.unshift({id:0, name:'无'})
+
         }else{
           message.error(data.message)
         }
@@ -158,8 +163,6 @@ export default defineComponent({
     };
     const modalVisible = ref(false)
     const modalLoading = ref(false)
-    const treeSelectData = ref()//level1要显示在表格，所以用treeSelectData来显示父文档节点，可以添加无
-    treeSelectData.value = []
     const editor = new E('#content')//wangeditor
     editor.config.zIndex = 0;
 

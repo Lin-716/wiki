@@ -45,7 +45,7 @@
                   {{ item.name }}
                 </router-link>
               </template>
-              <template #avatar><a-avatar :src="item.cover" /></template>
+              <template #avatar><a-avatar :src="item.cover"/></template>
             </a-list-item-meta>
 
           </a-list-item>
@@ -76,31 +76,18 @@ export default defineComponent({
     //ref响应式数据
     const ebooks = ref();
     const handleQueryEbook = () => {
-      axios.get("/ebook/list",{
-        params:{
-          page:1,
-          size:1000,
+      axios.get("/ebook/list", {
+        params: {
+          page: 1,
+          size: 1000,
           categoryId2: categoryId2
         }
       }).then((response) => {
-        const data = response.data
-        ebooks.value = data.content.list
-      })
-      console.log(ebooks.value)
-    }
-
-    const pagination = {
-      onChange: (page: number) => {
-        console.log(page);
-      },
-      //nums of item each page
-      pageSize: 9,
+        const data = response.data;
+        ebooks.value = data.content.list;
+        // ebooks1.books = data.content;
+      });
     };
-    const actions: Record<string, string>[] = [
-      { type: 'StarOutlined', text: '156' },
-      { type: 'LikeOutlined', text: '156' },
-      { type: 'MessageOutlined', text: '2' },
-    ];
 
     //查询分类
     const level1 = ref()
@@ -139,9 +126,6 @@ export default defineComponent({
 
     return {
       ebooks,
-      //listData,
-      pagination,
-      actions,
       handleClick,
       isShowWelcome,
 
