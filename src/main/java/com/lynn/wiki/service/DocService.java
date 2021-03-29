@@ -101,6 +101,10 @@ public class DocService {
 
     public String findContent(Long id){
         Content content = contentMapper.selectByPrimaryKey(id);
-        return content.getContent(); //返回get要判断content是否为空
+        if(ObjectUtils.isEmpty(content)){
+            return "";
+        }else{
+            return content.getContent(); //返回get要判断content是否为空,否则空指针异常
+        }
     }
 }

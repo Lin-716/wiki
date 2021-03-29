@@ -13,6 +13,7 @@
           </a-tree>
         </a-col>
         <a-col :span="18">
+          <div class="wangeditor" :innerHTML="html"></div>
         </a-col>
       </a-row>
     </a-layout-content>
@@ -33,6 +34,7 @@ export default defineComponent({
     const docs = ref()
     const level1 = ref()
     level1.value = []
+    const html = ref()
 
     // 数据查询
     const handleQuery = () => {
@@ -48,19 +50,25 @@ export default defineComponent({
         }
       })
     }
-    //
-    // // 内容查询
-    // const handleQueryContent = () => {
-    //   axios.get("/doc/find-content/" + doc.value.id).then((response) => {
-    //     const data = response.data //commomResp
-    //     if(data.success){
-    //       editor.txt.html(data.content)
-    //     }else{
-    //       message.error(data.message)
-    //     }
-    //   })
-    // }
 
+    // 内容查询
+    const handleQueryContent = (id: number) => {
+      axios.get("/doc/find-content/" + id).then((response) => {
+        const data = response.data //commomResp
+        if(data.success){
+          html.value = data.content
+        }else{
+          message.error(data.message)
+        }
+      })
+    }
+
+    const onSelect = (selectedKeys: any, ifo: any) => {
+      if(Tool.isNotEmpty(selectedKeys)){
+        //加载,selectedKeys,一次可以选择多个节点所以是个数组
+        handleQueryContent(selectedKeys[0])
+      }
+    }
 
     //后端获得分页参数
     //ebookId为admin-category中拼接的record.id（'/admin/doc/ebookid=?' + record.id
@@ -70,6 +78,8 @@ export default defineComponent({
 
     return {
       level1,
+      html,
+      onSelect
     };
   },
 });
