@@ -29,7 +29,7 @@
     >
       <div class="welcome" v-show="isShowWelcome">welcome</div>
 <!--content-->
-      <a-list item-layout="vertical" v-show="!isShowWelcome" size="large" :pagination="pagination" :grid="{ gutter: 20, column: 3 }" :data-source="ebooks">
+      <a-list item-layout="vertical" v-show="!isShowWelcome" size="large" :grid="{ gutter: 20, column: 3 }" :data-source="ebooks">
         <template #renderItem="{ item }">
           <a-list-item key="item.name">
             <template #actions>
