@@ -11,6 +11,7 @@ import com.lynn.wiki.resp.UserQueryResp;
 import com.lynn.wiki.resp.PageResp;
 import com.lynn.wiki.service.UserService;
 import com.lynn.wiki.util.SnowFlake;
+import jdk.internal.instrumentation.Logger;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
@@ -77,6 +78,14 @@ public class UserController {
         redisTemplate.opsForValue().set(token, JSONObject.toJSONString(userLoginResp),3600*24, TimeUnit.SECONDS);
 
         resp.setContent(userLoginResp);
+        return resp;
+    }
+
+    @GetMapping("/logout/{token}")
+    public CommonResp logout(@PathVariable Long token){
+        CommonResp resp = new CommonResp<>();
+        redisTemplate.delete(token);
+
         return resp;
     }
 

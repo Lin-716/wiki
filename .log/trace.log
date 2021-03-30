@@ -3486,3 +3486,307 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 2021-03-30 19:28:45.027 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m <==      Total: 15
 2021-03-30 19:28:45.030 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
 2021-03-30 19:28:45.030 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：21 ms -------------
+2021-03-30 19:40:55.355 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:40:55.501 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-1 - Shutdown initiated...
+2021-03-30 19:40:55.506 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-1 - Shutdown completed.
+2021-03-30 19:40:56.050 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 922 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-30 19:40:56.051 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-30 19:40:56.924 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-30 19:40:56.925 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-30 19:40:56.950 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+2021-03-30 19:40:57.354 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8081 (http)
+2021-03-30 19:40:57.355 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:40:57.355 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-30 19:40:57.356 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-30 19:40:57.381 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-30 19:40:57.382 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 1316 ms
+2021-03-30 19:40:58.713 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:41:00.727 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-03-30 19:41:00.789 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:41:00.796 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-30 19:41:00.812 INFO  com.lynn.wiki.WikiApplication                     :61   [32m                  [0;39m Started WikiApplication in 4.989 seconds (JVM running for 4089.312)
+2021-03-30 19:41:00.827 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-03-30 19:41:00.829 INFO  com.lynn.wiki.WikiApplication                     :22   [32m                  [0;39m success
+2021-03-30 19:41:00.830 INFO  com.lynn.wiki.WikiApplication                     :23   [32m                  [0;39m address:	http://127.0.0.1:8081
+2021-03-30 19:41:07.282 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:41:07.668 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 922 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-30 19:41:07.671 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-30 19:41:08.185 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-30 19:41:08.186 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-30 19:41:08.205 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2021-03-30 19:41:08.511 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8081 (http)
+2021-03-30 19:41:08.512 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:41:08.513 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-30 19:41:08.513 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-30 19:41:08.552 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-30 19:41:08.552 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 867 ms
+2021-03-30 19:41:10.399 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:41:10.631 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:590  [32m                  [0;39m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
+com.lynn.wiki.controller.UserController#list(UserQueryReq)
+to {GET [/user/list]}: There is already 'userController' bean method
+com.lynn.wiki.controller.UserController#delete(UserQueryReq) mapped.
+2021-03-30 19:41:10.632 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:41:10.676 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Stopping service [Tomcat]
+2021-03-30 19:41:10.698 INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener:136  [32m                  [0;39m 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-03-30 19:41:10.776 ERROR org.springframework.boot.SpringApplication        :856  [32m                  [0;39m Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
+com.lynn.wiki.controller.UserController#list(UserQueryReq)
+to {GET [/user/list]}: There is already 'userController' bean method
+com.lynn.wiki.controller.UserController#delete(UserQueryReq) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:917)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:582)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at com.lynn.wiki.WikiApplication.main(WikiApplication.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
+com.lynn.wiki.controller.UserController#list(UserQueryReq)
+to {GET [/user/list]}: There is already 'userController' bean method
+com.lynn.wiki.controller.UserController#delete(UserQueryReq) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:659)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:625)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:325)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:395)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:295)
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:293)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:206)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 20 common frames omitted
+2021-03-30 19:41:27.508 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 922 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-30 19:41:27.508 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-30 19:41:28.373 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-30 19:41:28.373 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-30 19:41:28.388 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2021-03-30 19:41:28.837 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8081 (http)
+2021-03-30 19:41:28.839 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:41:28.839 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-30 19:41:28.840 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-30 19:41:28.855 INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/]  :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-30 19:41:28.856 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 1343 ms
+2021-03-30 19:41:29.796 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:41:30.734 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-03-30 19:41:30.755 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:41:30.759 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-30 19:41:30.768 INFO  com.lynn.wiki.WikiApplication                     :61   [32m                  [0;39m Started WikiApplication in 3.317 seconds (JVM running for 4119.267)
+2021-03-30 19:41:30.772 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-03-30 19:41:30.772 INFO  com.lynn.wiki.WikiApplication                     :22   [32m                  [0;39m success
+2021-03-30 19:41:30.773 INFO  com.lynn.wiki.WikiApplication                     :23   [32m                  [0;39m address:	http://127.0.0.1:8081
+2021-03-30 19:41:42.338 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:41:42.924 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 922 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-30 19:41:42.924 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-30 19:41:43.360 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-30 19:41:43.364 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-30 19:41:43.378 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2021-03-30 19:41:44.123 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8081 (http)
+2021-03-30 19:41:44.125 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:41:44.144 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-30 19:41:44.144 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-30 19:41:44.177 INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/]  :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-30 19:41:44.178 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 1249 ms
+2021-03-30 19:41:45.243 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:41:45.823 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-03-30 19:41:45.849 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:41:45.853 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-30 19:41:45.862 INFO  com.lynn.wiki.WikiApplication                     :61   [32m                  [0;39m Started WikiApplication in 2.987 seconds (JVM running for 4134.36)
+2021-03-30 19:41:45.870 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-03-30 19:41:45.871 INFO  com.lynn.wiki.WikiApplication                     :22   [32m                  [0;39m success
+2021-03-30 19:41:45.871 INFO  com.lynn.wiki.WikiApplication                     :23   [32m                  [0;39m address:	http://127.0.0.1:8081
+2021-03-30 19:43:22.015 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:43:22.432 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 922 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-30 19:43:22.432 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-30 19:43:22.864 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-30 19:43:22.865 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-30 19:43:22.880 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2021-03-30 19:43:23.173 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8081 (http)
+2021-03-30 19:43:23.175 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:43:23.177 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-30 19:43:23.178 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-30 19:43:23.189 INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/]  :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-30 19:43:23.190 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 748 ms
+2021-03-30 19:43:24.055 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:43:24.671 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-03-30 19:43:24.695 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:43:24.698 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-30 19:43:24.704 INFO  com.lynn.wiki.WikiApplication                     :61   [32m                  [0;39m Started WikiApplication in 2.504 seconds (JVM running for 4233.2)
+2021-03-30 19:43:24.707 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-03-30 19:43:24.707 INFO  com.lynn.wiki.WikiApplication                     :22   [32m                  [0;39m success
+2021-03-30 19:43:24.708 INFO  com.lynn.wiki.WikiApplication                     :23   [32m                  [0;39m address:	http://127.0.0.1:8081
+2021-03-30 19:44:10.818 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:44:11.168 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 922 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-30 19:44:11.169 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-30 19:44:11.623 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-30 19:44:11.624 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-30 19:44:11.649 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+2021-03-30 19:44:12.114 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8081 (http)
+2021-03-30 19:44:12.117 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:44:12.117 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-30 19:44:12.118 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-30 19:44:12.145 INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/]  :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-30 19:44:12.145 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 969 ms
+2021-03-30 19:44:12.899 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:44:14.453 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-03-30 19:44:14.505 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:44:14.518 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-30 19:44:14.536 INFO  com.lynn.wiki.WikiApplication                     :61   [32m                  [0;39m Started WikiApplication in 3.442 seconds (JVM running for 4283.031)
+2021-03-30 19:44:14.539 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-03-30 19:44:14.540 INFO  com.lynn.wiki.WikiApplication                     :22   [32m                  [0;39m success
+2021-03-30 19:44:14.541 INFO  com.lynn.wiki.WikiApplication                     :23   [32m                  [0;39m address:	http://127.0.0.1:8081
+2021-03-30 19:44:24.062 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:44:24.352 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 922 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-30 19:44:24.353 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-30 19:44:25.030 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-30 19:44:25.031 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-30 19:44:25.085 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 53 ms. Found 0 Redis repository interfaces.
+2021-03-30 19:44:25.470 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8081 (http)
+2021-03-30 19:44:25.472 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:44:25.472 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-30 19:44:25.473 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-30 19:44:25.485 INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/]  :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-30 19:44:25.486 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 1111 ms
+2021-03-30 19:44:26.436 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:44:27.026 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-03-30 19:44:27.069 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:44:27.073 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-30 19:44:27.079 INFO  com.lynn.wiki.WikiApplication                     :61   [32m                  [0;39m Started WikiApplication in 2.8 seconds (JVM running for 4295.574)
+2021-03-30 19:44:27.082 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-03-30 19:44:27.083 INFO  com.lynn.wiki.WikiApplication                     :22   [32m                  [0;39m success
+2021-03-30 19:44:27.083 INFO  com.lynn.wiki.WikiApplication                     :23   [32m                  [0;39m address:	http://127.0.0.1:8081
+2021-03-30 19:44:31.508 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:44:31.703 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 922 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-30 19:44:31.704 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-30 19:44:31.938 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-30 19:44:31.939 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-30 19:44:31.952 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2021-03-30 19:44:32.144 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8081 (http)
+2021-03-30 19:44:32.145 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:44:32.147 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-30 19:44:32.147 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-30 19:44:32.161 INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/]  :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-30 19:44:32.161 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 454 ms
+2021-03-30 19:44:32.597 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:44:33.010 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-03-30 19:44:33.035 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:44:33.040 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-30 19:44:33.048 INFO  com.lynn.wiki.WikiApplication                     :61   [32m                  [0;39m Started WikiApplication in 1.39 seconds (JVM running for 4301.543)
+2021-03-30 19:44:33.058 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-03-30 19:44:33.059 INFO  com.lynn.wiki.WikiApplication                     :22   [32m                  [0;39m success
+2021-03-30 19:44:33.059 INFO  com.lynn.wiki.WikiApplication                     :23   [32m                  [0;39m address:	http://127.0.0.1:8081
+2021-03-30 19:45:29.357 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:45:29.876 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 922 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-30 19:45:29.877 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-30 19:45:30.178 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :250  [32m                  [0;39m Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-30 19:45:30.179 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :128  [32m                  [0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-30 19:45:30.191 INFO  o.s.d.r.config.RepositoryConfigurationDelegate    :188  [32m                  [0;39m Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2021-03-30 19:45:30.385 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8081 (http)
+2021-03-30 19:45:30.386 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:45:30.387 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-30 19:45:30.387 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-30 19:45:30.400 INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/]  :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-30 19:45:30.400 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 520 ms
+2021-03-30 19:45:31.448 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30 19:45:31.807 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-03-30 19:45:31.819 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8081"]
+2021-03-30 19:45:31.821 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-30 19:45:31.826 INFO  com.lynn.wiki.WikiApplication                     :61   [32m                  [0;39m Started WikiApplication in 2.205 seconds (JVM running for 4360.319)
+2021-03-30 19:45:31.828 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener :63   [32m                  [0;39m Condition evaluation unchanged
+2021-03-30 19:45:31.828 INFO  com.lynn.wiki.WikiApplication                     :22   [32m                  [0;39m success
+2021-03-30 19:45:31.828 INFO  com.lynn.wiki.WikiApplication                     :23   [32m                  [0;39m address:	http://127.0.0.1:8081
+2021-03-30 19:55:03.735 INFO  o.a.c.c.ContainerBase.[Tomcat-1].[localhost].[/]  :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-30 19:55:03.744 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-03-30 19:55:03.757 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 12 ms
+2021-03-30 19:55:03.782 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 19:55:03.787 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/category/all GET
+2021-03-30 19:55:03.789 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.CategoryController.all
+2021-03-30 19:55:03.790 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 19:55:03.795 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: []
+2021-03-30 19:55:03.843 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-2 - Starting...
+2021-03-30 19:55:04.109 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-2 - Start completed.
+2021-03-30 19:55:04.110 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-03-30 19:55:04.113 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 19:55:04.126 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-03-30 19:55:04.127 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-03-30 19:55:04.128 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-03-30 19:55:04.129 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-03-30 19:55:04.130 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-03-30 19:55:04.131 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-03-30 19:55:04.132 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-03-30 19:55:04.133 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-03-30 19:55:04.133 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-03-30 19:55:04.139 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-03-30 19:55:04.140 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-03-30 19:55:04.141 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-03-30 19:55:04.143 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-03-30 19:55:04.145 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-03-30 19:55:04.145 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-03-30 19:55:04.146 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-03-30 19:55:04.147 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m <==      Total: 15
+2021-03-30 19:55:04.406 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-03-30 19:55:04.407 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：628 ms -------------
+2021-03-30 19:55:10.588 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 19:55:10.589 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/user/logout/32243936433147904 GET
+2021-03-30 19:55:10.590 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.UserController.logout
+2021-03-30 19:55:10.590 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 19:55:10.591 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: [32243936433147904]
+2021-03-30 19:55:12.231 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"success":true}
+2021-03-30 19:55:12.232 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：1644 ms -------------
+2021-03-30 19:58:37.813 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 19:58:37.815 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/category/all GET
+2021-03-30 19:58:37.816 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.CategoryController.all
+2021-03-30 19:58:37.816 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 19:58:37.817 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: []
+2021-03-30 19:58:37.823 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-03-30 19:58:37.824 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 19:58:37.828 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-03-30 19:58:37.829 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 100, 0, 前端开发, 100
+2021-03-30 19:58:37.832 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-03-30 19:58:37.833 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-03-30 19:58:37.834 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-03-30 19:58:37.834 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-03-30 19:58:37.835 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-03-30 19:58:37.835 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-03-30 19:58:37.835 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-03-30 19:58:37.836 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-03-30 19:58:37.836 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 400, 0, 数据库, 400
+2021-03-30 19:58:37.836 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-03-30 19:58:37.837 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-03-30 19:58:37.837 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-03-30 19:58:37.837 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-03-30 19:58:37.838 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-03-30 19:58:37.838 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m <==      Total: 15
+2021-03-30 19:58:37.844 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"id":100,"name":"前端开发","parent":0,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":400,"name":"数据库","parent":0,"sort":400},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-03-30 19:58:37.844 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：32 ms -------------
+2021-03-30 19:58:43.528 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 19:58:43.529 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/user/login POST
+2021-03-30 19:58:43.529 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.UserController.login
+2021-03-30 19:58:43.530 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 19:58:43.533 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: [{"loginName":"test"}]
+2021-03-30 19:58:43.548 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m ==>  Preparing: select id, login_name, `name`, `password` from user WHERE ( login_name = ? )
+2021-03-30 19:58:43.549 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m ==> Parameters: test(String)
+2021-03-30 19:58:43.556 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==    Columns: id, login_name, name, password
+2021-03-30 19:58:43.556 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==        Row: 1, test, 测试, e70e2222a9d67c4f2eae107533359aa4
+2021-03-30 19:58:43.558 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m <==      Total: 1
+2021-03-30 19:58:43.836 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":{"id":1,"loginName":"test","name":"测试","token":"32252199480463360"},"success":true}
+2021-03-30 19:58:43.837 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：309 ms -------------
