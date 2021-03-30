@@ -1,5 +1,6 @@
 package com.lynn.wiki.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.lynn.wiki.req.UserLoginReq;
 import com.lynn.wiki.req.UserQueryReq;
 import com.lynn.wiki.req.UserResetPasswordReq;
@@ -9,11 +10,14 @@ import com.lynn.wiki.resp.UserLoginResp;
 import com.lynn.wiki.resp.UserQueryResp;
 import com.lynn.wiki.resp.PageResp;
 import com.lynn.wiki.service.UserService;
+import com.lynn.wiki.util.SnowFlake;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/user")
@@ -21,6 +25,12 @@ public class UserController {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private SnowFlake snowFlake;//用雪花算法生成token
+
+    @Resource
+    private RedisTemplate redisTemplate;
 
     @GetMapping("/list")//接口的请求地址
     public CommonResp list(@Valid UserQueryReq req){//@valid开启校验规则
@@ -58,6 +68,14 @@ public class UserController {
         req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
         CommonResp<UserLoginResp> resp = new CommonResp<>();
         UserLoginResp userLoginResp = userService.login(req);
+
+        //生成单点登录token，并放入redis中
+        Long token = snowFlake.nextId();
+        userLoginResp.setToken(token.toString());
+        //ops操作，token为key,userLoginResp为value
+        //userLoginResp类需要序列化，来做远程传输
+        redisTemplate.opsForValue().set(token, JSONObject.toJSONString(userLoginResp),3600*24, TimeUnit.SECONDS);
+
         resp.setContent(userLoginResp);
         return resp;
     }

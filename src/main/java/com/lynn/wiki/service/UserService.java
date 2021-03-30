@@ -109,7 +109,7 @@ public class UserService {
         if(ObjectUtils.isEmpty(userDb)){
             LOG.info("用户名不存在,{}",req.getLoginName());
              //用户名不存在
-            throw new BusinessException(BusinessExceptionCode.USER_LOGIN_NAME_EXIST);
+            throw new BusinessException(BusinessExceptionCode.LOGIN_USER_ERROR);
         }else{
             //比对密码
             if(userDb.getPassword().equals(req.getPassword())){
@@ -119,7 +119,7 @@ public class UserService {
             }else{
                 LOG.info("密码错误,{},正确密码,{}",req.getPassword(),userDb.getPassword());
                 //密码错误
-                throw new BusinessException(BusinessExceptionCode.USER_LOGIN_NAME_EXIST);
+                throw new BusinessException(BusinessExceptionCode.LOGIN_USER_ERROR);
             }
         }
     }
