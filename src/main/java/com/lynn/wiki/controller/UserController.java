@@ -1,9 +1,11 @@
 package com.lynn.wiki.controller;
 
+import com.lynn.wiki.req.UserLoginReq;
 import com.lynn.wiki.req.UserQueryReq;
 import com.lynn.wiki.req.UserResetPasswordReq;
 import com.lynn.wiki.req.UserSaveReq;
 import com.lynn.wiki.resp.CommonResp;
+import com.lynn.wiki.resp.UserLoginResp;
 import com.lynn.wiki.resp.UserQueryResp;
 import com.lynn.wiki.resp.PageResp;
 import com.lynn.wiki.service.UserService;
@@ -36,18 +38,27 @@ public class UserController {
         return resp;
     }
 
-    @DeleteMapping("/delete/{id}")//保存编辑修改的电子书信息
+    @DeleteMapping("/delete/{id}")
     public CommonResp delete(@PathVariable long id){
         CommonResp resp = new CommonResp<>();
         userService.delete(id);
         return resp;
     }
 
-    @PostMapping("/reset-password")//保存编辑修改的电子书信息
+    @PostMapping("/reset-password")
     public CommonResp resetPassword(@Valid @RequestBody UserResetPasswordReq req){
         req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));//加密的32位16进制字符串
         CommonResp resp = new CommonResp<>();
         userService.resetPassword(req);
+        return resp;
+    }
+
+    @PostMapping("/login")
+    public CommonResp login(@Valid @RequestBody UserLoginReq req){
+        req.setPassword(DigestUtils.md5DigestAsHex(req.getPassword().getBytes()));
+        CommonResp<UserLoginResp> resp = new CommonResp<>();
+        UserLoginResp userLoginResp = userService.login(req);
+        resp.setContent(userLoginResp);
         return resp;
     }
 

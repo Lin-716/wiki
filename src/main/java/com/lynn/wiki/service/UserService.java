@@ -7,9 +7,11 @@ import com.lynn.wiki.domain.UserExample;
 import com.lynn.wiki.exception.BusinessException;
 import com.lynn.wiki.exception.BusinessExceptionCode;
 import com.lynn.wiki.mapper.UserMapper;
+import com.lynn.wiki.req.UserLoginReq;
 import com.lynn.wiki.req.UserQueryReq;
 import com.lynn.wiki.req.UserResetPasswordReq;
 import com.lynn.wiki.req.UserSaveReq;
+import com.lynn.wiki.resp.UserLoginResp;
 import com.lynn.wiki.resp.UserQueryResp;
 import com.lynn.wiki.resp.PageResp;
 import com.lynn.wiki.util.CopyUtil;
@@ -99,5 +101,26 @@ public class UserService {
     public void resetPassword(UserResetPasswordReq req){
         User user = CopyUtil.copy(req, User.class);
         userMapper.updateByPrimaryKeySelective(user);
+    }
+
+    //登录
+    public UserLoginResp login(UserLoginReq req){
+        User userDb = selectByLoginName(req.getLoginName());
+        if(ObjectUtils.isEmpty(userDb)){
+            LOG.info("用户名不存在,{}",req.getLoginName());
+             //用户名不存在
+            throw new BusinessException(BusinessExceptionCode.USER_LOGIN_NAME_EXIST);
+        }else{
+            //比对密码
+            if(userDb.getPassword().equals(req.getPassword())){
+                //登陆成功
+                UserLoginResp userLoginResp = CopyUtil.copy(userDb, UserLoginResp.class);
+                return userLoginResp;
+            }else{
+                LOG.info("密码错误,{},正确密码,{}",req.getPassword(),userDb.getPassword());
+                //密码错误
+                throw new BusinessException(BusinessExceptionCode.USER_LOGIN_NAME_EXIST);
+            }
+        }
     }
 }

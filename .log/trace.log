@@ -1068,3 +1068,361 @@ Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot d
 2021-03-30 01:42:25.080 INFO  com.lynn.wiki.service.UserService                 :49   [32m                  [0;39m 总页数1
 2021-03-30 01:42:25.082 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":{"list":[{"id":1,"loginName":"test","name":"测试"},{"id":31856726642921472,"loginName":"11","name":"11"},{"id":31955638066221056,"loginName":"00","name":"00"},{"id":31976052981108736,"loginName":"123","name":"1231"}],"total":4},"success":true}
 2021-03-30 01:42:25.082 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：35 ms -------------
+2021-03-30 01:48:37.860 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 01:48:37.867 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/user/list GET
+2021-03-30 01:48:37.868 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.UserController.list
+2021-03-30 01:48:37.869 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 01:48:37.870 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: [{"page":1,"size":10}]
+2021-03-30 01:48:37.893 DEBUG c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM user
+2021-03-30 01:48:37.897 DEBUG c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 01:48:37.905 TRACE c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-03-30 01:48:37.906 TRACE c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 3
+2021-03-30 01:48:37.909 DEBUG c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-03-30 01:48:37.914 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m ==>  Preparing: select id, login_name, `name`, `password` from user LIMIT ?
+2021-03-30 01:48:37.915 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m ==> Parameters: 10(Integer)
+2021-03-30 01:48:37.917 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==    Columns: id, login_name, name, password
+2021-03-30 01:48:37.918 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==        Row: 1, test, 测试, fe76d0fd6f1e4494d0a9488237a202bb
+2021-03-30 01:48:37.920 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==        Row: 31955638066221056, 00, 00, 7fb34d104a7de6d74b7393bd6342995f
+2021-03-30 01:48:37.921 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==        Row: 31976052981108736, 123, 1231, 371b4737ce8a7c933db281c08629b8da
+2021-03-30 01:48:37.922 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m <==      Total: 3
+2021-03-30 01:48:37.923 INFO  com.lynn.wiki.service.UserService                 :48   [32m                  [0;39m 总行数3
+2021-03-30 01:48:37.924 INFO  com.lynn.wiki.service.UserService                 :49   [32m                  [0;39m 总页数1
+2021-03-30 01:48:37.926 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":{"list":[{"id":1,"loginName":"test","name":"测试"},{"id":31955638066221056,"loginName":"00","name":"00"},{"id":31976052981108736,"loginName":"123","name":"1231"}],"total":3},"success":true}
+2021-03-30 01:48:37.927 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：67 ms -------------
+2021-03-30 01:48:42.341 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 01:48:42.342 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/user/delete/31976052981108736 DELETE
+2021-03-30 01:48:42.342 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.UserController.delete
+2021-03-30 01:48:42.343 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 01:48:42.343 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: [31976052981108736]
+2021-03-30 01:48:42.348 DEBUG com.lynn.wiki.mapper.UserMapper.deleteByPrimaryKey:137  [32m                  [0;39m ==>  Preparing: delete from user where id = ?
+2021-03-30 01:48:42.349 DEBUG com.lynn.wiki.mapper.UserMapper.deleteByPrimaryKey:137  [32m                  [0;39m ==> Parameters: 31976052981108736(Long)
+2021-03-30 01:48:42.356 DEBUG com.lynn.wiki.mapper.UserMapper.deleteByPrimaryKey:137  [32m                  [0;39m <==    Updates: 1
+2021-03-30 01:48:42.357 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"success":true}
+2021-03-30 01:48:42.357 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：16 ms -------------
+2021-03-30 01:48:42.388 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 01:48:42.389 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/user/list GET
+2021-03-30 01:48:42.389 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.UserController.list
+2021-03-30 01:48:42.389 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 01:48:42.389 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: [{"page":1,"size":10}]
+2021-03-30 01:48:42.393 DEBUG c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM user
+2021-03-30 01:48:42.394 DEBUG c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 01:48:42.399 TRACE c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-03-30 01:48:42.400 TRACE c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 2
+2021-03-30 01:48:42.401 DEBUG c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-03-30 01:48:42.402 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m ==>  Preparing: select id, login_name, `name`, `password` from user LIMIT ?
+2021-03-30 01:48:42.403 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m ==> Parameters: 10(Integer)
+2021-03-30 01:48:42.405 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==    Columns: id, login_name, name, password
+2021-03-30 01:48:42.406 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==        Row: 1, test, 测试, fe76d0fd6f1e4494d0a9488237a202bb
+2021-03-30 01:48:42.407 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==        Row: 31955638066221056, 00, 00, 7fb34d104a7de6d74b7393bd6342995f
+2021-03-30 01:48:42.408 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m <==      Total: 2
+2021-03-30 01:48:42.409 INFO  com.lynn.wiki.service.UserService                 :48   [32m                  [0;39m 总行数2
+2021-03-30 01:48:42.409 INFO  com.lynn.wiki.service.UserService                 :49   [32m                  [0;39m 总页数1
+2021-03-30 01:48:42.410 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":{"list":[{"id":1,"loginName":"test","name":"测试"},{"id":31955638066221056,"loginName":"00","name":"00"}],"total":2},"success":true}
+2021-03-30 01:48:42.410 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：22 ms -------------
+2021-03-30 01:48:51.546 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :218  [32m                  [0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-30 01:48:51.555 INFO  com.zaxxer.hikari.HikariDataSource                :350  [32m                  [0;39m HikariPool-1 - Shutdown initiated...
+2021-03-30 01:48:51.609 INFO  com.zaxxer.hikari.HikariDataSource                :352  [32m                  [0;39m HikariPool-1 - Shutdown completed.
+2021-03-30 15:43:57.128 INFO  org.hibernate.validator.internal.util.Version     :21   [32m                  [0;39m HV000001: Hibernate Validator 6.1.7.Final
+2021-03-30 15:43:57.612 INFO  com.lynn.wiki.WikiApplication                     :55   [32m                  [0;39m Starting WikiApplication using Java 1.8.0_281 on linlindeMacBook-Air.local with PID 42730 (/Users/linlin/IdeaProjects/wiki/target/classes started by linlin in /Users/linlin/IdeaProjects/wiki)
+2021-03-30 15:43:57.613 INFO  com.lynn.wiki.WikiApplication                     :660  [32m                  [0;39m No active profile set, falling back to default profiles: default
+2021-03-30 15:43:57.779 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-03-30 15:43:57.779 INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor :255  [32m                  [0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-03-30 15:44:01.715 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :108  [32m                  [0;39m Tomcat initialized with port(s): 8081 (http)
+2021-03-30 15:44:01.731 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Initializing ProtocolHandler ["http-nio-8081"]
+2021-03-30 15:44:01.732 INFO  org.apache.catalina.core.StandardService          :173  [32m                  [0;39m Starting service [Tomcat]
+2021-03-30 15:44:01.733 INFO  org.apache.catalina.core.StandardEngine           :173  [32m                  [0;39m Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-30 15:44:01.853 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring embedded WebApplicationContext
+2021-03-30 15:44:01.854 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext    :289  [32m                  [0;39m Root WebApplicationContext: initialization completed in 4073 ms
+2021-03-30 15:44:04.123 INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor  :181  [32m                  [0;39m Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30 15:44:05.027 INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer    :58   [32m                  [0;39m LiveReload server is running on port 35729
+2021-03-30 15:44:05.060 INFO  org.apache.coyote.http11.Http11NioProtocol        :173  [32m                  [0;39m Starting ProtocolHandler ["http-nio-8081"]
+2021-03-30 15:44:05.125 INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer      :220  [32m                  [0;39m Tomcat started on port(s): 8081 (http) with context path ''
+2021-03-30 15:44:05.150 INFO  com.lynn.wiki.WikiApplication                     :61   [32m                  [0;39m Started WikiApplication in 9.424 seconds (JVM running for 12.865)
+2021-03-30 15:44:05.156 INFO  com.lynn.wiki.WikiApplication                     :22   [32m                  [0;39m success
+2021-03-30 15:44:05.158 INFO  com.lynn.wiki.WikiApplication                     :23   [32m                  [0;39m address:	http://127.0.0.1:8081
+2021-03-30 15:45:57.700 INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] :173  [32m                  [0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-30 15:45:57.704 INFO  org.springframework.web.servlet.DispatcherServlet :525  [32m                  [0;39m Initializing Servlet 'dispatcherServlet'
+2021-03-30 15:45:57.710 INFO  org.springframework.web.servlet.DispatcherServlet :547  [32m                  [0;39m Completed initialization in 5 ms
+2021-03-30 15:45:57.867 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 15:45:57.869 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/category/all GET
+2021-03-30 15:45:57.870 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.CategoryController.all
+2021-03-30 15:45:57.872 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 15:45:58.027 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: []
+2021-03-30 15:45:58.123 INFO  com.zaxxer.hikari.HikariDataSource                :110  [32m                  [0;39m HikariPool-1 - Starting...
+2021-03-30 15:45:59.266 INFO  com.zaxxer.hikari.HikariDataSource                :123  [32m                  [0;39m HikariPool-1 - Start completed.
+2021-03-30 15:45:59.282 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-03-30 15:45:59.325 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 15:45:59.406 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-03-30 15:45:59.406 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 30420099013939200, 1, 1, 1
+2021-03-30 15:45:59.409 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 100, 1, 前端开发, 100
+2021-03-30 15:45:59.410 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-03-30 15:45:59.411 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-03-30 15:45:59.412 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-03-30 15:45:59.413 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-03-30 15:45:59.413 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-03-30 15:45:59.414 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-03-30 15:45:59.415 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-03-30 15:45:59.416 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-03-30 15:45:59.417 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-03-30 15:45:59.418 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-03-30 15:45:59.419 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-03-30 15:45:59.420 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-03-30 15:45:59.420 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-03-30 15:45:59.422 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m <==      Total: 15
+2021-03-30 15:45:59.475 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"id":30420099013939200,"name":"1","parent":1,"sort":1},{"id":100,"name":"前端开发","parent":1,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-03-30 15:45:59.476 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：1613 ms -------------
+2021-03-30 15:46:24.235 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 15:46:24.237 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/category/all GET
+2021-03-30 15:46:24.237 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.CategoryController.all
+2021-03-30 15:46:24.238 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 15:46:24.239 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: []
+2021-03-30 15:46:24.244 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-03-30 15:46:24.245 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 15:46:24.251 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-03-30 15:46:24.252 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 30420099013939200, 1, 1, 1
+2021-03-30 15:46:24.257 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 100, 1, 前端开发, 100
+2021-03-30 15:46:24.258 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-03-30 15:46:24.259 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-03-30 15:46:24.260 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-03-30 15:46:24.262 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-03-30 15:46:24.263 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-03-30 15:46:24.264 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-03-30 15:46:24.265 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-03-30 15:46:24.266 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-03-30 15:46:24.267 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-03-30 15:46:24.269 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-03-30 15:46:24.270 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-03-30 15:46:24.270 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-03-30 15:46:24.271 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-03-30 15:46:24.272 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m <==      Total: 15
+2021-03-30 15:46:24.281 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"id":30420099013939200,"name":"1","parent":1,"sort":1},{"id":100,"name":"前端开发","parent":1,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-03-30 15:46:24.282 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：47 ms -------------
+2021-03-30 15:47:03.020 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 15:47:03.022 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/category/all GET
+2021-03-30 15:47:03.022 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.CategoryController.all
+2021-03-30 15:47:03.023 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 15:47:03.023 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: []
+2021-03-30 15:47:03.025 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-03-30 15:47:03.026 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 15:47:03.034 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-03-30 15:47:03.035 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 30420099013939200, 1, 1, 1
+2021-03-30 15:47:03.036 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 100, 1, 前端开发, 100
+2021-03-30 15:47:03.038 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-03-30 15:47:03.038 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-03-30 15:47:03.039 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-03-30 15:47:03.041 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-03-30 15:47:03.042 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-03-30 15:47:03.044 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-03-30 15:47:03.045 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-03-30 15:47:03.046 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-03-30 15:47:03.047 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-03-30 15:47:03.049 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-03-30 15:47:03.051 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-03-30 15:47:03.053 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-03-30 15:47:03.054 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-03-30 15:47:03.056 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m <==      Total: 15
+2021-03-30 15:47:03.060 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"id":30420099013939200,"name":"1","parent":1,"sort":1},{"id":100,"name":"前端开发","parent":1,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-03-30 15:47:03.061 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：41 ms -------------
+2021-03-30 15:47:56.254 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 15:47:56.260 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/category/all GET
+2021-03-30 15:47:56.260 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.CategoryController.all
+2021-03-30 15:47:56.262 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 15:47:56.264 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: []
+2021-03-30 15:47:56.277 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-03-30 15:47:56.280 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 15:47:56.291 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-03-30 15:47:56.292 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 30420099013939200, 1, 1, 1
+2021-03-30 15:47:56.294 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 100, 1, 前端开发, 100
+2021-03-30 15:47:56.295 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-03-30 15:47:56.297 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-03-30 15:47:56.299 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-03-30 15:47:56.301 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-03-30 15:47:56.302 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-03-30 15:47:56.303 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-03-30 15:47:56.304 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-03-30 15:47:56.305 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-03-30 15:47:56.306 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-03-30 15:47:56.308 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-03-30 15:47:56.309 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-03-30 15:47:56.312 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-03-30 15:47:56.313 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-03-30 15:47:56.315 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m <==      Total: 15
+2021-03-30 15:47:56.320 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"id":30420099013939200,"name":"1","parent":1,"sort":1},{"id":100,"name":"前端开发","parent":1,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-03-30 15:47:56.321 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：67 ms -------------
+2021-03-30 15:48:45.443 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 15:48:45.444 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/category/all GET
+2021-03-30 15:48:45.445 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.CategoryController.all
+2021-03-30 15:48:45.445 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 15:48:45.446 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: []
+2021-03-30 15:48:45.449 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-03-30 15:48:45.450 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 15:48:45.454 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-03-30 15:48:45.455 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 30420099013939200, 1, 1, 1
+2021-03-30 15:48:45.456 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 100, 1, 前端开发, 100
+2021-03-30 15:48:45.457 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-03-30 15:48:45.458 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-03-30 15:48:45.459 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-03-30 15:48:45.460 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-03-30 15:48:45.461 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-03-30 15:48:45.462 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-03-30 15:48:45.463 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-03-30 15:48:45.464 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-03-30 15:48:45.465 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-03-30 15:48:45.467 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-03-30 15:48:45.468 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-03-30 15:48:45.469 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-03-30 15:48:45.470 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-03-30 15:48:45.471 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m <==      Total: 15
+2021-03-30 15:48:45.474 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"id":30420099013939200,"name":"1","parent":1,"sort":1},{"id":100,"name":"前端开发","parent":1,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-03-30 15:48:45.475 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：33 ms -------------
+2021-03-30 15:50:04.045 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 15:50:04.052 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/category/all GET
+2021-03-30 15:50:04.053 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.CategoryController.all
+2021-03-30 15:50:04.053 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 15:50:04.054 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: []
+2021-03-30 15:50:04.058 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-03-30 15:50:04.060 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 15:50:04.063 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-03-30 15:50:04.065 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 30420099013939200, 1, 1, 1
+2021-03-30 15:50:04.066 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 100, 1, 前端开发, 100
+2021-03-30 15:50:04.067 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-03-30 15:50:04.068 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-03-30 15:50:04.069 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-03-30 15:50:04.073 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-03-30 15:50:04.074 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-03-30 15:50:04.076 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-03-30 15:50:04.077 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-03-30 15:50:04.078 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-03-30 15:50:04.079 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-03-30 15:50:04.079 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-03-30 15:50:04.080 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-03-30 15:50:04.081 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-03-30 15:50:04.082 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-03-30 15:50:04.083 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m <==      Total: 15
+2021-03-30 15:50:04.089 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"id":30420099013939200,"name":"1","parent":1,"sort":1},{"id":100,"name":"前端开发","parent":1,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-03-30 15:50:04.090 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：45 ms -------------
+2021-03-30 15:50:10.521 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 15:50:10.523 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/category/all GET
+2021-03-30 15:50:10.524 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.CategoryController.all
+2021-03-30 15:50:10.524 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 15:50:10.525 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: []
+2021-03-30 15:50:10.528 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-03-30 15:50:10.529 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 15:50:10.532 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-03-30 15:50:10.533 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 30420099013939200, 1, 1, 1
+2021-03-30 15:50:10.534 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 100, 1, 前端开发, 100
+2021-03-30 15:50:10.534 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-03-30 15:50:10.535 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-03-30 15:50:10.535 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-03-30 15:50:10.536 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-03-30 15:50:10.536 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-03-30 15:50:10.537 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-03-30 15:50:10.537 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-03-30 15:50:10.538 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-03-30 15:50:10.539 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-03-30 15:50:10.540 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-03-30 15:50:10.541 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-03-30 15:50:10.541 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-03-30 15:50:10.542 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-03-30 15:50:10.543 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m <==      Total: 15
+2021-03-30 15:50:10.547 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"id":30420099013939200,"name":"1","parent":1,"sort":1},{"id":100,"name":"前端开发","parent":1,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-03-30 15:50:10.548 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：27 ms -------------
+2021-03-30 15:50:10.871 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 15:50:10.871 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/ebook/list GET
+2021-03-30 15:50:10.872 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.EbookController.list
+2021-03-30 15:50:10.872 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 15:50:10.877 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: [{"page":0,"size":0}]
+2021-03-30 15:50:10.979 DEBUG c.l.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM ebook
+2021-03-30 15:50:10.980 DEBUG c.l.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 15:50:11.022 TRACE c.l.wiki.mapper.EbookMapper.selectByExample_COUNT :143  [32m                  [0;39m <==    Columns: count(0)
+2021-03-30 15:50:11.023 TRACE c.l.wiki.mapper.EbookMapper.selectByExample_COUNT :143  [32m                  [0;39m <==        Row: 5
+2021-03-30 15:50:11.025 DEBUG c.l.wiki.mapper.EbookMapper.selectByExample_COUNT :137  [32m                  [0;39m <==      Total: 1
+2021-03-30 15:50:11.029 DEBUG com.lynn.wiki.mapper.EbookMapper.selectByExample  :137  [32m                  [0;39m ==>  Preparing: select id, `name`, category1_id, category2_id, description, cover, doc_count, view_count, vote_count from ebook
+2021-03-30 15:50:11.030 DEBUG com.lynn.wiki.mapper.EbookMapper.selectByExample  :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 15:50:11.036 TRACE com.lynn.wiki.mapper.EbookMapper.selectByExample  :143  [32m                  [0;39m <==    Columns: id, name, category1_id, category2_id, description, cover, doc_count, view_count, vote_count
+2021-03-30 15:50:11.037 TRACE com.lynn.wiki.mapper.EbookMapper.selectByExample  :143  [32m                  [0;39m <==        Row: 1, Spring Boot 入门, 200, 201, 零基础入门 Java 开发，企业级应用开发最佳首选框架, /image/cover1.jpg, 0, 0, 0
+2021-03-30 15:50:11.038 TRACE com.lynn.wiki.mapper.EbookMapper.selectByExample  :143  [32m                  [0;39m <==        Row: 2, Vue 入门教程, 100, 101, 零基础入门 Vue 开发，企业级应用开发最佳首选框架, @/image/cover2.jpg, 0, 0, 0
+2021-03-30 15:50:11.039 TRACE com.lynn.wiki.mapper.EbookMapper.selectByExample  :143  [32m                  [0;39m <==        Row: 3, Python 入门教程, 200, 202, 零基础入门 Python 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-03-30 15:50:11.041 TRACE com.lynn.wiki.mapper.EbookMapper.selectByExample  :143  [32m                  [0;39m <==        Row: 4, Mysql 入门教程, null, null, 零基础入门 Mysql 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-03-30 15:50:11.042 TRACE com.lynn.wiki.mapper.EbookMapper.selectByExample  :143  [32m                  [0;39m <==        Row: 5, Oracle 入门教程, null, null, 零基础入门 Oracle 开发，企业级应用开发最佳首选框架, null, 0, 0, 0
+2021-03-30 15:50:11.044 DEBUG com.lynn.wiki.mapper.EbookMapper.selectByExample  :137  [32m                  [0;39m <==      Total: 5
+2021-03-30 15:50:11.046 INFO  com.lynn.wiki.service.EbookService                :51   [32m                  [0;39m 总行数5
+2021-03-30 15:50:11.047 INFO  com.lynn.wiki.service.EbookService                :52   [32m                  [0;39m 总页数0
+2021-03-30 15:50:11.067 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":{"list":[{"category1Id":200,"category2Id":201,"cover":"/image/cover1.jpg","description":"零基础入门 Java 开发，企业级应用开发最佳首选框架","docCount":0,"id":1,"name":"Spring Boot 入门","viewCount":0,"voteCount":0},{"category1Id":100,"category2Id":101,"cover":"@/image/cover2.jpg","description":"零基础入门 Vue 开发，企业级应用开发最佳首选框架","docCount":0,"id":2,"name":"Vue 入门教程","viewCount":0,"voteCount":0},{"category1Id":200,"category2Id":202,"description":"零基础入门 Python 开发，企业级应用开发最佳首选框架","docCount":0,"id":3,"name":"Python 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Mysql 开发，企业级应用开发最佳首选框架","docCount":0,"id":4,"name":"Mysql 入门教程","viewCount":0,"voteCount":0},{"description":"零基础入门 Oracle 开发，企业级应用开发最佳首选框架","docCount":0,"id":5,"name":"Oracle 入门教程","viewCount":0,"voteCount":0}],"total":5},"success":true}
+2021-03-30 15:50:11.068 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：197 ms -------------
+2021-03-30 15:50:12.161 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 15:50:12.162 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/user/list GET
+2021-03-30 15:50:12.163 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.UserController.list
+2021-03-30 15:50:12.163 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 15:50:12.167 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: [{"page":1,"size":10}]
+2021-03-30 15:50:12.182 DEBUG c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM user
+2021-03-30 15:50:12.182 DEBUG c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 15:50:12.226 TRACE c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-03-30 15:50:12.227 TRACE c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 2
+2021-03-30 15:50:12.227 DEBUG c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-03-30 15:50:12.233 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m ==>  Preparing: select id, login_name, `name`, `password` from user LIMIT ?
+2021-03-30 15:50:12.234 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m ==> Parameters: 10(Integer)
+2021-03-30 15:50:12.242 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==    Columns: id, login_name, name, password
+2021-03-30 15:50:12.242 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==        Row: 1, test, 测试, fe76d0fd6f1e4494d0a9488237a202bb
+2021-03-30 15:50:12.243 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==        Row: 31955638066221056, 00, 00, 7fb34d104a7de6d74b7393bd6342995f
+2021-03-30 15:50:12.243 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m <==      Total: 2
+2021-03-30 15:50:12.244 INFO  com.lynn.wiki.service.UserService                 :50   [32m                  [0;39m 总行数2
+2021-03-30 15:50:12.245 INFO  com.lynn.wiki.service.UserService                 :51   [32m                  [0;39m 总页数1
+2021-03-30 15:50:12.258 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":{"list":[{"id":1,"loginName":"test","name":"测试"},{"id":31955638066221056,"loginName":"00","name":"00"}],"total":2},"success":true}
+2021-03-30 15:50:12.258 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：97 ms -------------
+2021-03-30 15:50:22.120 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 15:50:22.121 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/user/reset-password POST
+2021-03-30 15:50:22.122 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.UserController.resetPassword
+2021-03-30 15:50:22.123 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 15:50:22.130 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: [{"id":1}]
+2021-03-30 15:50:22.141 DEBUG c.l.w.m.UserMapper.updateByPrimaryKeySelective    :137  [32m                  [0;39m ==>  Preparing: update user SET `password` = ? where id = ?
+2021-03-30 15:50:22.143 DEBUG c.l.w.m.UserMapper.updateByPrimaryKeySelective    :137  [32m                  [0;39m ==> Parameters: e70e2222a9d67c4f2eae107533359aa4(String), 1(Long)
+2021-03-30 15:50:22.303 DEBUG c.l.w.m.UserMapper.updateByPrimaryKeySelective    :137  [32m                  [0;39m <==    Updates: 1
+2021-03-30 15:50:22.308 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"success":true}
+2021-03-30 15:50:22.313 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：193 ms -------------
+2021-03-30 15:50:22.383 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 15:50:22.384 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/user/list GET
+2021-03-30 15:50:22.385 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.UserController.list
+2021-03-30 15:50:22.386 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 15:50:22.387 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: [{"page":1,"size":10}]
+2021-03-30 15:50:22.389 DEBUG c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==>  Preparing: SELECT count(0) FROM user
+2021-03-30 15:50:22.390 DEBUG c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 15:50:22.398 TRACE c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==    Columns: count(0)
+2021-03-30 15:50:22.399 TRACE c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :143  [32m                  [0;39m <==        Row: 2
+2021-03-30 15:50:22.400 DEBUG c.l.wiki.mapper.UserMapper.selectByExample_COUNT  :137  [32m                  [0;39m <==      Total: 1
+2021-03-30 15:50:22.402 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m ==>  Preparing: select id, login_name, `name`, `password` from user LIMIT ?
+2021-03-30 15:50:22.403 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m ==> Parameters: 10(Integer)
+2021-03-30 15:50:22.406 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==    Columns: id, login_name, name, password
+2021-03-30 15:50:22.407 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==        Row: 1, test, 测试, e70e2222a9d67c4f2eae107533359aa4
+2021-03-30 15:50:22.408 TRACE com.lynn.wiki.mapper.UserMapper.selectByExample   :143  [32m                  [0;39m <==        Row: 31955638066221056, 00, 00, 7fb34d104a7de6d74b7393bd6342995f
+2021-03-30 15:50:22.409 DEBUG com.lynn.wiki.mapper.UserMapper.selectByExample   :137  [32m                  [0;39m <==      Total: 2
+2021-03-30 15:50:22.411 INFO  com.lynn.wiki.service.UserService                 :50   [32m                  [0;39m 总行数2
+2021-03-30 15:50:22.411 INFO  com.lynn.wiki.service.UserService                 :51   [32m                  [0;39m 总页数1
+2021-03-30 15:50:22.412 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":{"list":[{"id":1,"loginName":"test","name":"测试"},{"id":31955638066221056,"loginName":"00","name":"00"}],"total":2},"success":true}
+2021-03-30 15:50:22.413 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：30 ms -------------
+2021-03-30 15:50:26.048 INFO  com.lynn.wiki.aspect.LogAspect                    :51   [32m                  [0;39m ------------- 开始 -------------
+2021-03-30 15:50:26.049 INFO  com.lynn.wiki.aspect.LogAspect                    :52   [32m                  [0;39m 请求地址: http://127.0.0.1:8081/category/all GET
+2021-03-30 15:50:26.049 INFO  com.lynn.wiki.aspect.LogAspect                    :53   [32m                  [0;39m 类名方法: com.lynn.wiki.controller.CategoryController.all
+2021-03-30 15:50:26.049 INFO  com.lynn.wiki.aspect.LogAspect                    :54   [32m                  [0;39m 远程地址: 127.0.0.1
+2021-03-30 15:50:26.050 INFO  com.lynn.wiki.aspect.LogAspect                    :76   [32m                  [0;39m 请求参数: []
+2021-03-30 15:50:26.053 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==>  Preparing: select id, parent, `name`, sort from category order by sort asc
+2021-03-30 15:50:26.054 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m ==> Parameters: 
+2021-03-30 15:50:26.057 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==    Columns: id, parent, name, sort
+2021-03-30 15:50:26.058 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 30420099013939200, 1, 1, 1
+2021-03-30 15:50:26.059 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 100, 1, 前端开发, 100
+2021-03-30 15:50:26.060 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 101, 100, Vue, 101
+2021-03-30 15:50:26.061 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 102, 100, HTML & CSS, 102
+2021-03-30 15:50:26.062 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 200, 0, Java, 200
+2021-03-30 15:50:26.064 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 201, 200, 基础应用, 201
+2021-03-30 15:50:26.064 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 202, 200, 框架应用, 202
+2021-03-30 15:50:26.065 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 300, 0, Python, 300
+2021-03-30 15:50:26.066 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 301, 300, 基础应用, 301
+2021-03-30 15:50:26.067 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 302, 300, 进阶方向应用, 302
+2021-03-30 15:50:26.068 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 401, 400, MySQL, 401
+2021-03-30 15:50:26.068 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 500, 0, 其它, 500
+2021-03-30 15:50:26.069 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 501, 500, 服务器, 501
+2021-03-30 15:50:26.071 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 502, 500, 开发工具, 502
+2021-03-30 15:50:26.072 TRACE c.lynn.wiki.mapper.CategoryMapper.selectByExample :143  [32m                  [0;39m <==        Row: 503, 500, 热门服务端语言, 503
+2021-03-30 15:50:26.073 DEBUG c.lynn.wiki.mapper.CategoryMapper.selectByExample :137  [32m                  [0;39m <==      Total: 15
+2021-03-30 15:50:26.076 INFO  com.lynn.wiki.aspect.LogAspect                    :88   [32m                  [0;39m 返回结果: {"content":[{"id":30420099013939200,"name":"1","parent":1,"sort":1},{"id":100,"name":"前端开发","parent":1,"sort":100},{"id":101,"name":"Vue","parent":100,"sort":101},{"id":102,"name":"HTML & CSS","parent":100,"sort":102},{"id":200,"name":"Java","parent":0,"sort":200},{"id":201,"name":"基础应用","parent":200,"sort":201},{"id":202,"name":"框架应用","parent":200,"sort":202},{"id":300,"name":"Python","parent":0,"sort":300},{"id":301,"name":"基础应用","parent":300,"sort":301},{"id":302,"name":"进阶方向应用","parent":300,"sort":302},{"id":401,"name":"MySQL","parent":400,"sort":401},{"id":500,"name":"其它","parent":0,"sort":500},{"id":501,"name":"服务器","parent":500,"sort":501},{"id":502,"name":"开发工具","parent":500,"sort":502},{"id":503,"name":"热门服务端语言","parent":500,"sort":503}],"success":true}
+2021-03-30 15:50:26.076 INFO  com.lynn.wiki.aspect.LogAspect                    :89   [32m                  [0;39m ------------- 结束 耗时：28 ms -------------
