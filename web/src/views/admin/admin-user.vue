@@ -73,7 +73,7 @@
   >
     <a-form :model="user" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }">
       <a-form-item label="登陆名">
-        <a-input v-model:value="user.loginName"/>
+        <a-input v-model:value="user.loginName" :disabled="user.id"/>
       </a-form-item>
       <a-form-item label="昵称">
         <a-input v-model:value="user.name" />
@@ -133,7 +133,7 @@ export default defineComponent({
         params: {
           page: params.page,
           size: params.size,
-          name: param.value.name
+          loginName: param.value.loginName
         }
       }).then((response) => {
         loading.value = false
@@ -166,8 +166,7 @@ export default defineComponent({
 
     const handleModalOk = () => {
       modalLoading.value = true
-      user.value.category1Id = categoryIds.value[0]
-      user.value.category2Id = categoryIds.value[1]
+
       axios.post("/user/save",user.value).then((response) => {
         modalLoading.value = false
         const data = response.data
@@ -200,7 +199,7 @@ export default defineComponent({
     //删除
     const handleDelete = (id: number) => {
       modalLoading.value = true
-      axios.delete("/user/delete/" + id,user.value).then((response) => {
+      axios.delete("/user/delete/" + id).then((response) => {
         const data = response.data // commonResp
         if (data.success){
           //重新加载
