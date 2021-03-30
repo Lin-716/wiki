@@ -72,7 +72,7 @@ public class UserService {
             }
         }else{
             //更新
-            userMapper.updateByPrimaryKey(user);
+            userMapper.updateByPrimaryKeySelective(user);//Selective表示user有值才去更新
         }
     }
 
