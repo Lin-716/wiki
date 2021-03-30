@@ -8,6 +8,7 @@ import com.lynn.wiki.exception.BusinessException;
 import com.lynn.wiki.exception.BusinessExceptionCode;
 import com.lynn.wiki.mapper.UserMapper;
 import com.lynn.wiki.req.UserQueryReq;
+import com.lynn.wiki.req.UserResetPasswordReq;
 import com.lynn.wiki.req.UserSaveReq;
 import com.lynn.wiki.resp.UserQueryResp;
 import com.lynn.wiki.resp.PageResp;
@@ -73,6 +74,7 @@ public class UserService {
         }else{
             //更新
             user.setLoginName(null);
+            user.setPassword(null);
             userMapper.updateByPrimaryKeySelective(user);//Selective表示user有值才去更新
         }
     }
@@ -91,5 +93,11 @@ public class UserService {
         }else{
             return userList.get(0);
         }
+    }
+
+    //修改密码
+    public void resetPassword(UserResetPasswordReq req){
+        User user = CopyUtil.copy(req, User.class);
+        userMapper.updateByPrimaryKeySelective(user);
     }
 }

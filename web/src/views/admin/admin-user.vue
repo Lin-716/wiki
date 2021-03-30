@@ -38,12 +38,9 @@
         <template v-slot:action="{ text, record }">
 <!--          空格组件-->
           <a-space size="small">
-            <router-link :to="'/admin/doc?userId=' + record.id">
-              <a-button type="primary">
-                文档管理
-              </a-button>
-            </router-link>
-
+            <a-button type="primary" @click="resetPassword(record)">
+                重置密码
+            </a-button>
             <a-button type="primary" @click="edit(record)">
               编辑
             </a-button>
@@ -78,7 +75,21 @@
       <a-form-item label="昵称">
         <a-input v-model:value="user.name" />
       </a-form-item>
-      <a-form-item label="密码">
+      <a-form-item label="密码" v-show="!user.id">
+        <a-input v-model:value="user.password" type="password"/>
+      </a-form-item>
+    </a-form>
+  </a-modal>
+
+  <!--重置密码-->
+  <a-modal
+      title="重置密码"
+      v-model:visible="resetModalVisible"
+      :confirm-loading="resetModalLoading"
+      @ok="handleResetModalOk"
+  >
+    <a-form :model="user" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }">
+      <a-form-item label="新密码">
         <a-input v-model:value="user.password" type="password"/>
       </a-form-item>
     </a-form>
@@ -90,6 +101,10 @@ import { defineComponent, onMounted, ref } from 'vue';
 import axios from 'axios'
 import { message } from 'ant-design-vue'
 import { Tool } from '@/util/tool'
+
+//用第三方js，vue的ts不能识别，用declare告诉文件这个变量存在
+declare let hexMd5: any
+declare let KEY: any
 
 export default defineComponent({
   name:'AdminUser',
@@ -159,7 +174,7 @@ export default defineComponent({
       })
     }
 
-    //表单
+    // ---------- 表单 ----------
     const user = ref()
     const modalVisible = ref(false)
     const modalLoading = ref(false)
@@ -167,7 +182,9 @@ export default defineComponent({
     const handleModalOk = () => {
       modalLoading.value = true
 
-      axios.post("/user/save",user.value).then((response) => {
+      user.value.password = hexMd5(user.value.password + KEY)//KEY是盐值
+
+      axios.post("/user/save", user.value).then((response) => {
         modalLoading.value = false
         const data = response.data
         if (data.success){
@@ -211,39 +228,37 @@ export default defineComponent({
       })
     }
 
-    //查询分类
-    // const level1 = ref()
-    // let categorys: any
-    // const handleQueryCategory = () => {
-    //   loading.value = true
-    //   axios.get("/category/all").then((response) => {
-    //     loading.value = false
-    //     const data = response.data //commomResp
-    //     if(data.success){
-    //       categorys= data.content
-    //       level1.value = []
-    //       level1.value = Tool.array2Tree(categorys,0)//一级分类parent为0
-    //
-    //       //加载完分类后在加载电子书，保证数据加载完后再加载电子书
-    //       handleQuery({
-    //         // page: 1,
-    //         // size: pagination.value.pageSize
-    //       })
-    //     }else{
-    //       message.error(data.message)
-    //     }
-    //   })
-    // }
-    //
-    // const getCategoryName = (cid:number) => {
-    //   let result = ""
-    //   categorys.forEach((item:any) => {
-    //     if(item.id == cid){
-    //       result = item.name
-    //     }
-    //   })
-    //   return result
-    // }
+    //---------- 重置密码表单 ----------
+    const resetModalVisible = ref(false)
+    const resetModalLoading = ref(false)
+
+    const handleResetModalOk = () => {
+      resetModalLoading.value = true
+
+      user.value.password = hexMd5(user.value.password + KEY)//KEY是盐值
+
+      axios.post("/user/reset-password", user.value).then((response) => {
+        resetModalLoading.value = false
+        const data = response.data
+        if (data.success){
+          modalVisible.value = false
+          //重新加载
+          handleQuery({
+            page: pagination.value.current,
+            size: pagination.value.pageSize
+          })
+        }else{
+          message.error(data.message)
+        }
+      })
+    }
+
+    //重置密码
+    const resetPassword = (record: any) => {
+      resetModalVisible.value = true
+      user.value = Tool.copy(record)//复制值显示到表单中，修改表单值未确定时，不会修改到值
+      user.value.password = null
+    }
 
     //后端获得分页参数
     onMounted(() => {
@@ -271,6 +286,11 @@ export default defineComponent({
       handleModalOk,
 
       user,
+
+      resetModalVisible,
+      resetModalLoading,
+      handleResetModalOk,
+      resetPassword
     };
   },
 });
