@@ -1,6 +1,6 @@
 //package com.lynn.wiki.config;
 //
-//import com.lynn.wiki.interceptor.LogInterceptor;
+//import com.lynn.wiki.interceptor.LoginInterceptor;
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 //import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -12,11 +12,27 @@
 //
 //    //注入拦截器
 //    @Resource
-//    LogInterceptor logInterceptor;
+//    LoginInterceptor loginInterceptor;
 //
-//    public void addInterceptors(InterceptorRegistry registry){
-//        registry.addInterceptor(logInterceptor)
-//                .addPathPatterns("/**").excludePathPatterns("/login");
-//        //增加所有请求再去掉某些请求
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(loginInterceptor)
+//                .addPathPatterns("/**")
+//                .excludePathPatterns(
+//                        "/test/**",
+//                        "/redis/**",
+//                        "/user/login",
+//                        "/category/all",
+//                        "/ebook/list",
+//                        "/doc/all/**",
+//                        "/doc/vote/**",
+//                        "/doc/find-content/**",
+//                        "/ebook-snapshot/**"
+//                );
+//
+////        registry.addInterceptor(actionInterceptor)
+////                .addPathPatterns(
+////                        "/*/save",
+////                        "/*/delete/**",
+////                        "/*/reset-password");
 //    }
 //}

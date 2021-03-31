@@ -11,7 +11,8 @@ import com.lynn.wiki.resp.UserQueryResp;
 import com.lynn.wiki.resp.PageResp;
 import com.lynn.wiki.service.UserService;
 import com.lynn.wiki.util.SnowFlake;
-import jdk.internal.instrumentation.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,8 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
+    private static final Logger LOG = LoggerFactory.getLogger(TestController.class);
 
     @Resource
     private UserService userService;
@@ -72,10 +75,12 @@ public class UserController {
 
         //生成单点登录token，并放入redis中
         Long token = snowFlake.nextId();
-        userLoginResp.setToken(token.toString());
+        LOG.info("生成单点登录并放入token中{}",token);
         //ops操作，token为key,userLoginResp为value
         //userLoginResp类需要序列化，来做远程传输
-        redisTemplate.opsForValue().set(token, JSONObject.toJSONString(userLoginResp),3600*24, TimeUnit.SECONDS);
+
+        userLoginResp.setToken(token.toString());
+        redisTemplate.opsForValue().set(token.toString(), JSONObject.toJSONString(userLoginResp), 3600 * 24, TimeUnit.SECONDS);
 
         resp.setContent(userLoginResp);
         return resp;
